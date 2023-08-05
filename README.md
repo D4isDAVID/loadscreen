@@ -1,6 +1,6 @@
 # loadscreen
 
-Loading screen for FiveM.
+A simple loading screen for FiveM ([preview]).
 
 - [Key Features](#key-features)
 - [Configuration](#configuration)
@@ -26,3 +26,5 @@ multicharacter script loads).
 ## Configuration
 
 See [`html/config.js`](./html/config.js) for configuration.
+
+[preview]: https://www.youtube.com/watch?v=gsMDuZzDStE
