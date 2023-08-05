@@ -15,7 +15,6 @@ html {
     --progress-bar-background: rgba(8, 8, 16, 0.5);
     --progress-value-background: rgb(64, 64, 255);
 
-    --shadow-color: rgba(20, 15, 35, 0.5);
     --finishing-transition: opacity 1s;
 
     background-image: var(--background);
