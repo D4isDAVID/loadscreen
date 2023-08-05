@@ -1,0 +1,9 @@
+# IDE-related
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# OS-related
+.DS_Store
+Thumbs.db

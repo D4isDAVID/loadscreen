@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "files.insertFinalNewline": true,
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/messages.js" type="module"></script>
+    <script src="./js/music.js" type="module"></script>
+    <script src="./js/images.js" type="module"></script>
+    <script src="./js/video.js" type="module"></script>
+</head>
+
+<body>
+    <video id="background-video" style="display: none;" autoplay loop playsinline disablepictureinpicture>
+    </video>
+    <div id="loadscreen-wrapper">
+        <header id="loadscreen-wrapper-header">
+            <h1 id="server-message"></h1>
+            <div id="audio-controls-wrapper" style="display: none;">
+                <button id="audio-controls-prev" class="audio-controls-button" style="display: none;">
+                    <img src="./assets/icons/skip_previous.svg" />
+                </button>
+                <audio id="background-audio" controls controlslist="nodownload noremoteplayback"></audio>
+                <button id="audio-controls-next" class="audio-controls-button" style="display: none">
+                    <img src="./assets/icons/skip_next.svg" />
+                </button>
+            </div>
+        </header>
+        <main id="loadscreen-wrapper-main" style="display: none; opacity: 0;">
+            <h1 id="finishing-message"></h1>
+            <p id="log-line"></p>
+        </main>
+        <footer id="loadscreen-wrapper-footer">
+            <div id="mini-progress-wrapper" style="display: none;">
+                <p id="mini-progress-action"></p>
+                <progress id="mini-progress"></progress>
+            </div>
+            <progress id="main-progress" max="1"></progress>
+        </footer>
+    </div>
+</body>
+
+</html>

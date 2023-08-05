@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "overextended.cfxlua-vscode",
+    "EditorConfig.EditorConfig",
+    "ecmel.vscode-html-css",
+    "sumneko.lua"
+  ]
+}

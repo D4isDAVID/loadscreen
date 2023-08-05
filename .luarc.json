@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "diagnostics": {
+    "disable": [],
+    "enable": true
+  },
+  "format": {
+    "enable": true
+  },
+  "runtime": {
+    "fileEncoding": "utf8",
+    "nonstandardSymbol": [
+      "/**/",
+      "`",
+      "+=",
+      "-=",
+      "*=",
+      "/=",
+      "<<=",
+      ">>=",
+      "&=",
+      "|=",
+      "^="
+    ],
+    "version": "Lua 5.4"
+  },
+  "type": {
+    "castNumberToInteger": false,
+    "weakNilCheck": false,
+    "weakUnionCheck": false
+  }
+}
