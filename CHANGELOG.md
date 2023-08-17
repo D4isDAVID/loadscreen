@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [unreleased diff]
 
+### Fixed
+
+- Finishing message not showing up.
+
 ## [1.0.0] - 2023-08-05
 
 [1.0.0 commits]

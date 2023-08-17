@@ -70,6 +70,7 @@ const handlers = {
         mainProgress.value = loadFraction;
         if (loadFraction === 1) {
             finishMiniProgress();
+            loadscreenWrapperMain.style.display = "";
             loadscreenWrapperMain.style.opacity = 1;
             loadscreenWrapperFooter.style.opacity = 0;
         }
