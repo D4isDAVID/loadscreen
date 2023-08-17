@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [unreleased diff]
 
+## [1.0.1] - 2023-08-17
+
+[1.0.1 diff]
+
 ### Fixed
 
 - Finishing message not showing up.
@@ -28,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Finishing message
 - Configuration file
 
-[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.0.0...main
+[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.0.1...main
+[1.0.1]: https://github.com/D4isDAVID/loadscreen/releases/tag/v1.0.1
+[1.0.1 diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v1.0.0
 [1.0.0 commits]: https://github.com/D4isDAVID/loadscreen/commits/v1.0.0
