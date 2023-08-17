@@ -9,13 +9,9 @@ repository 'https://github.com/D4isDAVID/loadscreen'
 lua54 'yes'
 use_experimental_fxv2_oal 'yes'
 
-client_scripts {
-    'client.lua',
-}
+client_script 'client.lua'
 
-server_scripts {
-    'server.lua',
-}
+server_script 'server.lua'
 
 files {
     'html/**',
