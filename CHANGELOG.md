@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Used a lighter font for large texts.
   - Aligned the server message & audio controls at the top.
   - Added spacing between the mini progress bar & its action message.
+- Updated README preview video.
 
 ### Fixed
 
