@@ -4,6 +4,7 @@ local resources = {
     'qbx-multicharacter',
     'esx_multicharacter',
     'ox_core',
+    'qbx_core',
 }
 
 for i = 1, #resources do

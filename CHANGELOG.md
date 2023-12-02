@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [unreleased diff]
 
+### Added
+
+- Better shutdown for `qbx_core`.
+
 ### Fixed
 
 - Invalid event data typing for `endDataFileEntries`.
