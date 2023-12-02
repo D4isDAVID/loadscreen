@@ -110,7 +110,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ 'endDataFileEntries': string }} data
+     * @param {{ eventName: 'endDataFileEntries' }} data
      */
     endDataFileEntries() {
         finishMiniProgress();
