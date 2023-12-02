@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Better shutdown for `qbx_core`.
 - Preview in regular browsers.
 
+### Changed
+
+- Improved styling.
+  - Used a lighter font for large texts.
+  - Aligned the server message & audio controls at the top.
+  - Added spacing between the mini progress bar & its action message.
+
 ### Fixed
 
 - Invalid event data typing for `endDataFileEntries`.
