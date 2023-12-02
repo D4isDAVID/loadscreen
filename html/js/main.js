@@ -169,3 +169,26 @@ const handlers = {
 window.addEventListener("message", ({ data }) =>
     handlers[data.eventName]?.(data)
 );
+
+if (!window.invokeNative) {
+    postMessage({ eventName: "loadProgress", loadFraction: 0.65 });
+    postMessage({ eventName: "startDataFileEntries", count: 100 });
+    postMessage({
+        eventName: "startInitFunctionOrder",
+        type: "TEST_FUNCTION",
+        order: 1,
+        count: 1,
+    });
+    postMessage({
+        eventName: "initFunctionInvoking",
+        name: "helloWorld",
+        idx: 0.65,
+    });
+    postMessage({
+        eventName: "performMapLoadFunction",
+        idx: 65,
+    });
+    loadscreenWrapperMain.style.display = "";
+    loadscreenWrapperMain.style.opacity = 1;
+    postMessage({ eventName: "onLogLine", message: "Awaiting scripts" });
+}
