@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-version '1.1.0-dev'
+version '1.1.0'
 description 'Loading screen for FiveM'
 author 'David Malchin <malchin459@gmail.com>'
 repository 'https://github.com/D4isDAVID/loadscreen'
