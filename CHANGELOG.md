@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Made finishing transition faster.
 - Made the loadscreen wrapper header disappear at the finishing transition.
 - Slightly aligned the main loading bar with the default GTA V text in the classic style.
+- Updated VSCode settings.
 - Updated README preview video.
 
 ## [1.1.0] - 2023-12-02
