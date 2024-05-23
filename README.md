@@ -27,4 +27,4 @@ multicharacter script loads).
 
 See [`html/config.js`](./html/config.js) for configuration.
 
-[preview]: https://www.youtube.com/watch?v=7O-CAXKl8fc
+[preview]: https://www.youtube.com/watch?v=PYmLLWKTgWo
