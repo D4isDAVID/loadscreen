@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [unreleased diff]
 
+## [1.2.0] - 2024-05-23
+
+[1.2.0 diff]
+
 ### Added
 
 - Config option for loadscreen styling.
@@ -68,7 +72,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Finishing message
 - Configuration file
 
-[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.1.0...main
+[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.2.0...main
+[1.2.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v1.2.0
+[1.2.0 diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v1.1.0
 [1.1.0 diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/D4isDAVID/loadscreen/releases/tag/v1.0.1
