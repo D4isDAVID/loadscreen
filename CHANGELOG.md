@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Config option for loadscreen styling.
 - Modern style.
 - Minimal style.
+- README section for styles.
 
 ### Changed
 
