@@ -1,4 +1,16 @@
 /**
+ * The CSS file to load for the screen.
+ *
+ * Default styles:
+ * * `./styles/classic.css` - the classic look since v1.0.0.
+ * * `./styles/modern.css` - a modernized layout.
+ * * `./styles/minimal.css` - everything is at the center of the screen without the secondary bar.
+ *
+ * File paths must be relative to the `index.html` file.
+ */
+export const style = "./styles/classic.css";
+
+/**
  * The message displayed at the top-left of the screen.
  *
  * Available variables:

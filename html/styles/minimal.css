@@ -1,0 +1,58 @@
+@import url('../main.css');
+
+#loadscreen-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    overflow: hidden;
+}
+
+#loadscreen-wrapper-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    transition: var(--finishing-transition);
+}
+
+#loadscreen-wrapper-main {
+    position: fixed;
+    text-align: center;
+    transition: var(--finishing-transition);
+}
+
+#loadscreen-wrapper-footer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--finishing-transition);
+}
+
+#mini-progress-wrapper {
+    display: block;
+}
+
+#mini-progress-action {
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+#mini-progress {
+    display: none;
+}
+
+#main-progress {
+    block-size: 0.75rem;
+    inline-size: 20rem;
+}

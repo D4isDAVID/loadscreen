@@ -1,0 +1,74 @@
+@import url('../main.css');
+
+#loadscreen-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    box-sizing: border-box;
+    padding: 3.5rem 3.5rem 1.75rem 3.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    gap: 1rem;
+
+    overflow: hidden;
+}
+
+#loadscreen-wrapper-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    transition: var(--finishing-transition);
+}
+
+#audio-controls-wrapper {
+    position: fixed;
+    right: 1.75rem;
+    bottom: 4rem;
+}
+
+#loadscreen-wrapper-main {
+    position: fixed;
+    transition: var(--finishing-transition);
+}
+
+#loadscreen-wrapper-footer {
+    width: 30rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    transition: var(--finishing-transition);
+}
+
+#mini-progress-wrapper {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.25rem;
+}
+
+#mini-progress-action {
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+#mini-progress {
+    block-size: 0.75rem;
+    inline-size: 100%;
+}
+
+#main-progress {
+    block-size: 1rem;
+    inline-size: 100%;
+}

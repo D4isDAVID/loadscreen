@@ -1,4 +1,8 @@
 /** @type {HTMLDivElement} */
+const loadscreenWrapperHeader = document.getElementById(
+    "loadscreen-wrapper-header"
+);
+/** @type {HTMLDivElement} */
 const loadscreenWrapperMain = document.getElementById(
     "loadscreen-wrapper-main"
 );
@@ -72,6 +76,7 @@ const handlers = {
             finishMiniProgress();
             loadscreenWrapperMain.style.display = "";
             loadscreenWrapperMain.style.opacity = 1;
+            loadscreenWrapperHeader.style.opacity = 0;
             loadscreenWrapperFooter.style.opacity = 0;
         }
     },
