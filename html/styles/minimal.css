@@ -25,6 +25,11 @@
     transition: var(--finishing-transition);
 }
 
+#audio-controls-wrapper {
+    position: fixed;
+    bottom: 1rem;
+}
+
 #loadscreen-wrapper-main {
     position: fixed;
     text-align: center;
