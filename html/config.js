@@ -2,9 +2,9 @@
  * The CSS file to load for the screen.
  *
  * Default styles:
- * * `./styles/classic.css` - the classic look since v1.0.0.
+ * * `./styles/classic.css` - the default style since v1.0.0.
  * * `./styles/modern.css` - a modernized layout.
- * * `./styles/minimal.css` - everything is at the center of the screen without the secondary bar.
+ * * `./styles/minimal.css` - everything is centered and the secondary bar is removed.
  *
  * File paths must be relative to the `index.html` file.
  */
