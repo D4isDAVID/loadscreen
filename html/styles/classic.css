@@ -36,7 +36,6 @@
 #loadscreen-wrapper-footer {
     width: 100%;
     box-sizing: border-box;
-    padding-right: 15rem;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -46,7 +45,7 @@
 }
 
 #mini-progress-wrapper {
-    width: 30rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -61,10 +60,10 @@
 
 #mini-progress {
     block-size: 0.75rem;
-    inline-size: 100%;
+    inline-size: 25%;
 }
 
 #main-progress {
     block-size: 1rem;
-    inline-size: 100%;
+    inline-size: 50%;
 }
