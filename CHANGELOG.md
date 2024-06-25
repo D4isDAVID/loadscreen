@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+### Changed
+
+- Simplified music & video code.
+
 ### Removed
 
 - Semantic versioning note in the changelog - this resource doesn't have an API.
