@@ -11,7 +11,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Changed
 
 - Simplified music & video code.
-- Reduced the loading bars' widths in the classic layout.
+- Reduced the loading bars' widths in the classic style.
+- Moved the audio controls to the bottom left in the minimal style.
 
 ### Removed
 
