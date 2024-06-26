@@ -36,6 +36,8 @@ CSS style and use it in the config instead.
 
 ## Configuration
 
-See [`html/config.js`](./html/config.js) for configuration.
+Configuration is handled through [convars].
+See [`loadscreen.cfg`](./loadscreen.cfg) for examples & explanations.
 
 [preview]: https://www.youtube.com/watch?v=PYmLLWKTgWo
+[convars]: https://docs.fivem.net/docs/scripting-reference/convars/

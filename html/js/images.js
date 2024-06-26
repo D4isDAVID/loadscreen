@@ -1,35 +1,37 @@
-import { chooseImageRandomly, imageSwitchRate, images } from "../config.js";
+import { getHandoverData } from "./util/handover.js";
+import { incrementWrap } from "./util/increment-wrap.js";
+import { randomInt } from "./util/random.js";
 
-if (images.length === 1) {
-    document.documentElement.style.background = images[0];
-} else if (images.length > 1) {
-    // cache images
-    for (const fileName of images) {
-        const image = document.createElement("img");
-        image.style.position = "absolute";
-        image.style.top = "-99999px";
-        image.style.left = "-99999px";
-        image.src = fileName;
-        document.body.appendChild(image);
-    }
+const {
+    paths: { images },
+    config: { background, imageRate, imageShuffle },
+} = getHandoverData();
 
-    let currentImage = null;
-    const nextBackground = () => {
-        if (chooseImageRandomly) {
-            let random = currentImage;
-            while (random === currentImage)
-                random = Math.floor(Math.random() * images.length);
-            currentImage = random;
-        } else if (currentImage === null) {
-            currentImage = 0;
-        } else {
-            currentImage++;
-            if (currentImage >= images.length) currentImage = 0;
+if (background === "image" && images.length > 0) {
+    if (images.length === 1) {
+        document.documentElement.style.background = images[0];
+    } else {
+        // cache images
+        for (const fileName of images) {
+            const image = document.createElement("img");
+            image.style.position = "absolute";
+            image.style.top = "-99999px";
+            image.style.left = "-99999px";
+            image.src = fileName;
+            document.body.appendChild(image);
         }
 
-        document.documentElement.style.backgroundImage = `url(${images[currentImage]})`;
-    };
+        /** @type {number | null} */
+        let currentImage = null;
 
-    nextBackground();
-    setInterval(nextBackground, imageSwitchRate);
+        const nextImage = () => {
+            currentImage = imageShuffle
+                ? randomInt(0, images.length, currentImage)
+                : incrementWrap(currentImage, 0, images.length - 1);
+            document.documentElement.style.backgroundImage = `url(${images[currentImage]})`;
+        };
+
+        nextImage();
+        setInterval(nextImage, imageRate);
+    }
 }

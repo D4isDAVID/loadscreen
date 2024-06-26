@@ -1,4 +1,10 @@
-import { finishingMessage, serverMessage } from "../config.js";
+import { getHandoverData } from "./util/handover.js";
+
+const {
+    playerName,
+    serverName,
+    config: { serverMessage, finishingMessage },
+} = getHandoverData();
 
 /** @type {HTMLHeadingElement} */
 const serverMessageHeading = document.getElementById("server-message");
@@ -13,11 +19,6 @@ const replaceVariables = (str, vars) => {
     for (const [k, v] of Object.entries(vars))
         str = str.replace("${" + k + "}", v);
     return str;
-};
-
-const { playerName, serverName } = window.nuiHandoverData ?? {
-    playerName: "Player",
-    serverName: "Server",
 };
 
 serverMessageHeading.innerText = replaceVariables(serverMessage, {

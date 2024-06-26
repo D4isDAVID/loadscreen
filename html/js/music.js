@@ -1,52 +1,66 @@
-import { initialMusicVolume, music } from "../config.js";
+import { getHandoverData } from "./util/handover.js";
+import { decrementWrap, incrementWrap } from "./util/increment-wrap.js";
+import { randomInt } from "./util/random.js";
 
-/** @type {HTMLDivElement} */
-const audioControlsWrapper = document.getElementById("audio-controls-wrapper");
-/** @type {HTMLAudioElement} */
-const backgroundAudio = document.getElementById("background-audio");
-/** @type {HTMLButtonElement} */
-const audioControlsPrev = document.getElementById("audio-controls-prev");
-/** @type {HTMLButtonElement} */
-const audioControlsNext = document.getElementById("audio-controls-next");
+const {
+    paths: { music },
+    config: { music: musicEnabled, musicVolume, musicShuffle },
+} = getHandoverData();
 
-backgroundAudio.volume = initialMusicVolume;
+if (musicEnabled && music.length > 0) {
+    /** @type {HTMLDivElement} */
+    const audioControlsWrapper = document.getElementById(
+        "audio-controls-wrapper"
+    );
+    /** @type {HTMLAudioElement} */
+    const backgroundAudio = document.getElementById("background-audio");
+    /** @type {HTMLButtonElement} */
+    const audioControlsPrev = document.getElementById("audio-controls-prev");
+    /** @type {HTMLButtonElement} */
+    const audioControlsNext = document.getElementById("audio-controls-next");
 
-/**
- * @param {string} fileName
- */
-const play = (fileName) => {
-    backgroundAudio.src = fileName;
-    backgroundAudio.play();
-};
-
-if (music.length === 1) {
+    backgroundAudio.volume = musicVolume;
     audioControlsWrapper.style.display = "";
-    backgroundAudio.loop = true;
-    play(music[0]);
-} else if (music.length > 1) {
-    /** @type {number | null} */
-    let currentSong = null;
 
-    audioControlsWrapper.style.display = "";
-    audioControlsPrev.style.display = "";
-    audioControlsNext.style.display = "";
-
-    const prevSong = () => {
-        if (currentSong === null || currentSong <= 0)
-            currentSong = music.length - 1;
-        else currentSong--;
-        play(music[currentSong]);
+    /**
+     * @param {string} fileName
+     */
+    const play = (fileName) => {
+        backgroundAudio.src = fileName;
+        backgroundAudio.play();
     };
 
-    const nextSong = () => {
-        if (currentSong === null || currentSong >= music.length - 1)
-            currentSong = 0;
-        else currentSong++;
-        play(music[currentSong]);
-    };
+    if (music.length === 1) {
+        backgroundAudio.loop = true;
+        play(music[0]);
+    } else {
+        audioControlsPrev.style.display = "";
+        audioControlsNext.style.display = "";
 
-    audioControlsPrev.addEventListener("click", prevSong);
-    audioControlsNext.addEventListener("click", nextSong);
-    backgroundAudio.addEventListener("ended", nextSong);
-    nextSong();
+        /** @type {number | null} */
+        let currentSong = null;
+
+        const prevSong = () => {
+            currentSong = decrementWrap(currentSong, 0, music.length - 1);
+            play(music[currentSong]);
+        };
+
+        const nextSong = () => {
+            currentSong = incrementWrap(currentSong, 0, music.length - 1);
+            play(music[currentSong]);
+        };
+
+        const randomSong = () => {
+            currentSong = randomInt(0, music.length, currentSong);
+            play(music[currentSong]);
+        };
+
+        audioControlsPrev.addEventListener("click", prevSong);
+        audioControlsNext.addEventListener("click", nextSong);
+        backgroundAudio.addEventListener(
+            "ended",
+            musicShuffle ? randomSong : nextSong
+        );
+        musicShuffle ? randomSong() : nextSong();
+    }
 }

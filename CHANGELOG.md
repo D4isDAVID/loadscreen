@@ -8,11 +8,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+### Added
+
+- Automatic usage of assets (images, music, videos).
+- Convar to toggle usage of music.
+- Convar to switch between the available backgrounds (css, images, videos).
+- Convars for shuffling music & videos.
+
 ### Changed
 
 - Simplified music & video code.
 - Reduced the loading bars' widths in the classic style.
 - Moved the audio controls to the bottom left in the minimal style.
+- Moved the config from a JS file to FiveM convars.
 
 ### Removed
 
