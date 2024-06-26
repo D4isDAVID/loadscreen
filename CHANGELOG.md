@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Removed
 
 - Semantic versioning note in the changelog - this resource doesn't have an API.
+- Config option for specifying assets - they are now automatically detected.
 
 ## [1.2.0] - 2024-05-23
 
