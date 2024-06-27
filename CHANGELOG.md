@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Convar to toggle usage of music.
 - Convar to switch between the available backgrounds (css, images, videos).
 - Convars for shuffling music & videos.
+- Convar for letting external resources handle the loadscreen shutdown.
 
 ### Changed
 
@@ -26,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Semantic versioning note in the changelog - this resource doesn't have an API.
 - Config option for specifying assets - they are now automatically detected.
+- Better shutdown for specific resources - use the new convar option.
 
 ## [1.2.0] - 2024-05-23
 

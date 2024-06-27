@@ -20,8 +20,8 @@ and video.
 
 ### No Bridge
 
-The loading screen shows up until the character spawns (or until a supported
-multicharacter script loads).
+The loading screen shows up until the character spawns or until another
+resource shuts it down, depending on the configuration.
 
 ### Multiple Styles
 

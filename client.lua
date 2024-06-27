@@ -1,17 +1,5 @@
--- these resources can handle the loadscreen shutdown for us
-local resources = {
-    'qb-multicharacter',
-    'qbx-multicharacter',
-    'esx_multicharacter',
-    'ox_core',
-    'qbx_core',
-}
-
-for i = 1, #resources do
-    if GetResourceState(resources[i]):find('start') then
-        return
-    end
-end
+local externalShutdown = GetConvarInt('loadscreen:externalShutdown', 0) == 1
+if externalShutdown then return end
 
 -- sumneko lua gives a warning if I don't do this weird thing
 local handler
