@@ -50,6 +50,9 @@ function onPlayerConnecting(name, _, deferrals) {
 
         config: {
             style: GetConvar("loadscreen:style", "classic"),
+            backgroundColor: GetConvar("loadscreen:backgroundColor", "#4040ff"),
+            showLogo: GetConvarInt("loadscreen:showLogo", 1) == 1,
+            overlay: GetConvarInt("loadscreen:overlay", 1) == 1,
 
             serverMessage: GetConvar(
                 "loadscreen:serverMessage",
