@@ -8,6 +8,9 @@
 /**
  * @typedef {Object} NuiHandoverConfig
  * @property {string} style
+ * @property {string} backgroundColor
+ * @property {boolean} overlay
+ * @property {boolean} showLogo
  * @property {string} serverMessage
  * @property {string} finishingMessage
  * @property {boolean} music
@@ -40,7 +43,10 @@ const DEFAULT_HANDOVER_DATA = {
         videos: [],
     },
     config: {
-        style: "classic",
+        style: "minimal",
+        backgroundColor: "#4040ff",
+        overlay: true,
+        showLogo: true,
         serverMessage: "${playerName}, welcome to ${serverName}!",
         finishingMessage: "Finishing up...",
         music: true,

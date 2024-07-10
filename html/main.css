@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+:root {
+    --background-color: #4040ff;
+    --background: linear-gradient(-15deg, rgb(5, 0, 7.5) 0%, rgb(15, 10, 25) 100%);
+    --text-color: rgb(250, 250, 250);
+    --progress-bar-background: rgba(8, 8, 16, 0.5);
+    --progress-value-background: var(--background-color);
+    --finishing-transition: opacity 0.5s;
+    --loading-font-family: Segoe UI, ui-sans-serif, sans-serif, Helvetica, Arial;
+}
+
+::-webkit-progress-bar {
+    background: var(--progress-bar-background);
+}
+
+::-webkit-progress-value {
+    background: var(--progress-value-background);
+}
 
 * {
     margin: 0 0;
@@ -9,23 +25,20 @@ html {
     width: 100vw;
     height: 100vh;
 
-    --background: linear-gradient(-15deg, rgb(5, 0, 7.5) 0%, rgb(15, 10, 25) 100%);
-    --text-color: rgb(250, 250, 250);
-
-    --progress-bar-background: rgba(8, 8, 16, 0.5);
-    --progress-value-background: rgb(64, 64, 255);
-
-    --finishing-transition: opacity 0.5s;
-
     background-image: var(--background);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    font-family: 'Roboto';
+    font-family: var(--loading-font-family);
     color: var(--text-color);
 
     transition: background-image 2s;
+    user-select: none;
+
+    font-synthesis: style;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1 {
@@ -35,14 +48,23 @@ h1 {
 progress {
     appearance: none;
     overflow: hidden;
+    border-radius: 1rem;
 }
 
-::-webkit-progress-bar {
-    background: var(--progress-bar-background);
+#logo>img {
+    width: 100%;
+    height: 5rem;
+    object-fit: cover;
 }
 
-::-webkit-progress-value {
-    background: var(--progress-value-background);
+#logo>img:hover {
+    cursor: pointer;
+    animation: rotateAnimation 2s ease-in-out;
+    filter: grayscale(1);
+}
+
+.overlay {
+    backdrop-filter: brightness(0.3);
 }
 
 #background-video {
@@ -62,6 +84,8 @@ progress {
     justify-content: center;
     background-color: rgb(241, 243, 244);
     border-radius: 1.7rem;
+    filter: invert(1);
+    opacity: 0.6;
 }
 
 .audio-controls-button {
@@ -96,4 +120,14 @@ progress {
 
 #audio-controls-next {
     transform: translateX(-10px);
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

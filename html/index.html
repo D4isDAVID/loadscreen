@@ -16,11 +16,15 @@
     <div id="loadscreen-wrapper">
         <header id="loadscreen-wrapper-header">
             <h1 id="server-message"></h1>
-            <div id="audio-controls-wrapper" style="display: none;">
+            <div id="logo">
+                <img src="./assets/logo.png" style="display: none;" />
+                <h1 style="display: none;"></h1>
+            </div>
+            <div id="audio-controls-wrapper">
                 <button id="audio-controls-prev" class="audio-controls-button" style="display: none;">
                     <img src="./assets/icons/skip_previous.svg" />
                 </button>
-                <audio id="background-audio" controls controlslist="nodownload noremoteplayback"></audio>
+                <audio id="background-audio" controls autoplay controlslist="nodownload noremoteplayback"></audio>
                 <button id="audio-controls-next" class="audio-controls-button" style="display: none">
                     <img src="./assets/icons/skip_next.svg" />
                 </button>
