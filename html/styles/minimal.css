@@ -25,17 +25,16 @@
     transition: var(--finishing-transition);
 }
 
+#audio-controls-wrapper {
+    position: fixed;
+    bottom: 6rem;
+    width: 9rem;
+}
 
 #loadscreen-wrapper-main {
     position: fixed;
     text-align: center;
     transition: var(--finishing-transition);
-}
-
-#audio-controls-wrapper {
-    position: fixed;
-    bottom: 6rem;
-    width: 9rem;
 }
 
 #loadscreen-wrapper-footer {

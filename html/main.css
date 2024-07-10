@@ -8,14 +8,6 @@
     --loading-font-family: Segoe UI, ui-sans-serif, sans-serif, Helvetica, Arial;
 }
 
-::-webkit-progress-bar {
-    background: var(--progress-bar-background);
-}
-
-::-webkit-progress-value {
-    background: var(--progress-value-background);
-}
-
 * {
     margin: 0 0;
     padding: 0 0;
@@ -49,6 +41,14 @@ progress {
     appearance: none;
     overflow: hidden;
     border-radius: 1rem;
+}
+
+::-webkit-progress-bar {
+    background: var(--progress-bar-background);
+}
+
+::-webkit-progress-value {
+    background: var(--progress-value-background);
 }
 
 #logo>img {
