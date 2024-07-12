@@ -35,6 +35,7 @@ h1 {
 progress {
     appearance: none;
     overflow: hidden;
+    border-radius: 1rem;
 }
 
 ::-webkit-progress-bar {
