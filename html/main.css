@@ -15,6 +15,7 @@ html {
         rgb(15, 10, 25) 100%
     );
     --text-color: rgb(250, 250, 250);
+    --border-round: 0.35rem;
 
     --progress-bar-background: rgba(8, 8, 16, 0.5);
     --progress-value-background: rgb(64, 64, 255);
@@ -48,6 +49,40 @@ progress {
 
 ::-webkit-progress-value {
     background: var(--progress-value-background);
+}
+
+#error-wrapper {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    background-color: rgba(0, 0, 0, 0.9);
+    color: rgb(250, 250, 250);
+    padding: 0.75rem;
+    border-radius: var(--border-round);
+    z-index: 1;
+}
+
+#error-wrapper > header {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+#error-log {
+    background-color: transparent;
+    color: rgb(225, 225, 225);
+    padding: 0.5rem;
+    border-radius: var(--border-round);
+}
+
+#error-log:focus {
+    outline: none;
 }
 
 #background-video {

@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <script src="./js/errors.js" type="module"></script>
         <script src="./js/style.js" type="module"></script>
         <script src="./js/main.js" type="module"></script>
         <script src="./js/messages.js" type="module"></script>
@@ -10,6 +11,15 @@
     </head>
 
     <body>
+        <div id="error-wrapper" style="display: none">
+            <header>
+                <img src="./assets/icons/report.svg" />
+                <h3>Error log</h3>
+            </header>
+            <p>Please copy & report the errors below.</p>
+            <textarea id="error-log" rows="10" cols="50" readonly></textarea>
+        </div>
+
         <video
             id="background-video"
             style="display: none"
