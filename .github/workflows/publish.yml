@@ -1,0 +1,41 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '**'
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: loadscreen
+          sparse-checkout: |
+            client
+            html
+            server
+            CHANGELOG.md
+            LICENSE
+            README.md
+            fxmanifest.lua
+            loadscreen.cfg
+
+      - name: Archive
+        shell: bash
+        run: |
+          version="${{ github.ref_name }}"
+
+          7z a "loadscreen-$version.zip" "loadscreen"
+
+      - name: Draft release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          draft: true
+          files: |
+            ./*.zip
