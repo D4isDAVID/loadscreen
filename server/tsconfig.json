@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../base.tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node10",
+
+    "types": ["node", "@citizenfx/server"],
+
+    "lib": ["ES2021"],
+
+    "skipLibCheck": true
+  },
+  "include": ["."]
+}

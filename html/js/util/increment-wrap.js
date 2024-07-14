@@ -4,7 +4,7 @@
  * @param {number} max
  */
 export function incrementWrap(num, min, max) {
-    return typeof num === "undefined" || num === null || num >= max
+    return typeof num === 'undefined' || num === null || num >= max
         ? min
         : ++num;
 }
@@ -15,7 +15,7 @@ export function incrementWrap(num, min, max) {
  * @param {number} max
  */
 export function decrementWrap(num, min, max) {
-    return typeof num === "undefined" || num === null || num <= min
+    return typeof num === 'undefined' || num === null || num <= min
         ? max
         : --num;
 }

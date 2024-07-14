@@ -1,25 +1,27 @@
-/** @type {HTMLDivElement} */
-const loadscreenWrapperHeader = document.getElementById(
-    "loadscreen-wrapper-header"
+const loadscreenWrapperHeader = /** @type {HTMLDivElement} */ (
+    document.getElementById('loadscreen-wrapper-header')
 );
-/** @type {HTMLDivElement} */
-const loadscreenWrapperMain = document.getElementById(
-    "loadscreen-wrapper-main"
+const loadscreenWrapperMain = /** @type {HTMLDivElement} */ (
+    document.getElementById('loadscreen-wrapper-main')
 );
-/** @type {HTMLDivElement} */
-const loadscreenWrapperFooter = document.getElementById(
-    "loadscreen-wrapper-footer"
+const loadscreenWrapperFooter = /** @type {HTMLDivElement} */ (
+    document.getElementById('loadscreen-wrapper-footer')
 );
-/** @type {HTMLParagraphElement} */
-const logLine = document.getElementById("log-line");
-/** @type {HTMLProgressElement} */
-const mainProgress = document.getElementById("main-progress");
-/** @type {HTMLDivElement} */
-const miniProgressWrapper = document.getElementById("mini-progress-wrapper");
-/** @type {HTMLParagraphElement} */
-const miniProgressAction = document.getElementById("mini-progress-action");
-/** @type {HTMLProgressElement} */
-const miniProgress = document.getElementById("mini-progress");
+const logLine = /** @type {HTMLParagraphElement} */ (
+    document.getElementById('log-line')
+);
+const mainProgress = /** @type {HTMLProgressElement} */ (
+    document.getElementById('main-progress')
+);
+const miniProgressWrapper = /** @type {HTMLDivElement} */ (
+    document.getElementById('mini-progress-wrapper')
+);
+const miniProgressAction = /** @type {HTMLParagraphElement} */ (
+    document.getElementById('mini-progress-action')
+);
+const miniProgress = /** @type {HTMLProgressElement} */ (
+    document.getElementById('mini-progress')
+);
 
 /** @type {boolean} */
 let processingDataFiles = false;
@@ -33,10 +35,10 @@ let currentInitFunctionType = null;
 let currentInitFunction = null;
 
 /**
- * @param {string} str
- * @param {string} base
+ * @param {string | null} str
+ * @param {string | null} base
  * @param {string} sep
- * @returns {string}
+ * @returns {string | null}
  */
 const prefixOrReplace = (str, base, sep) => {
     if (!base) return str;
@@ -50,20 +52,20 @@ const prefixOrReplace = (str, base, sep) => {
 const beginMiniProgress = (max) => {
     miniProgress.value = 0;
     miniProgress.max = max;
-    miniProgressWrapper.style.display = "";
+    miniProgressWrapper.style.display = '';
 };
 
 const updateMiniProgressAction = () => {
     let action = currentMap;
-    action = prefixOrReplace(currentDataFile, action, ": ");
-    action = prefixOrReplace(currentInitFunction, action, ": ");
-    action = prefixOrReplace(currentInitFunctionType, action, ": ");
-    miniProgressAction.innerText = action;
+    action = prefixOrReplace(currentDataFile, action, ': ');
+    action = prefixOrReplace(currentInitFunction, action, ': ');
+    action = prefixOrReplace(currentInitFunctionType, action, ': ');
+    miniProgressAction.innerText = action ?? '';
 };
 
 const finishMiniProgress = () => {
-    miniProgressWrapper.style.display = "none";
-    miniProgressAction.innerText = "";
+    miniProgressWrapper.style.display = 'none';
+    miniProgressAction.innerText = '';
 };
 
 const handlers = {
@@ -74,10 +76,10 @@ const handlers = {
         mainProgress.value = loadFraction;
         if (loadFraction === 1) {
             finishMiniProgress();
-            loadscreenWrapperMain.style.display = "";
-            loadscreenWrapperMain.style.opacity = 1;
-            loadscreenWrapperHeader.style.opacity = 0;
-            loadscreenWrapperFooter.style.opacity = 0;
+            loadscreenWrapperMain.style.display = '';
+            loadscreenWrapperMain.style.opacity = '1';
+            loadscreenWrapperHeader.style.opacity = '0';
+            loadscreenWrapperFooter.style.opacity = '0';
         }
     },
 
@@ -115,9 +117,9 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'endDataFileEntries' }} data
+     * @param {{ eventName: 'endDataFileEntries' }} _data
      */
-    endDataFileEntries() {
+    endDataFileEntries(_data) {
         finishMiniProgress();
         currentMap = null;
         currentDataFile = null;
@@ -152,9 +154,9 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'initFunctionInvoked', type: string, name: string }} data
+     * @param {{ eventName: 'initFunctionInvoked', type: string, name: string }} _data
      */
-    initFunctionInvoked() {
+    initFunctionInvoked(_data) {
         currentMap = null;
         currentDataFile = null;
         currentInitFunction = null;
@@ -162,38 +164,38 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'endInitFunction', type: string }} data
+     * @param {{ eventName: 'endInitFunction', type: string }} _data
      */
-    endInitFunction() {
+    endInitFunction(_data) {
         finishMiniProgress();
         currentInitFunction = null;
         currentInitFunctionType = null;
     },
 };
 
-window.addEventListener("message", ({ data }) =>
-    handlers[data.eventName]?.(data)
+window.addEventListener('message', ({ data }) =>
+    handlers[/** @type {keyof handlers} */ (data.eventName)]?.(data),
 );
 
-if (!window.invokeNative) {
-    postMessage({ eventName: "loadProgress", loadFraction: 0.65 });
-    postMessage({ eventName: "startDataFileEntries", count: 100 });
+if (!('invokeNative' in window)) {
+    postMessage({ eventName: 'loadProgress', loadFraction: 0.65 });
+    postMessage({ eventName: 'startDataFileEntries', count: 100 });
     postMessage({
-        eventName: "startInitFunctionOrder",
-        type: "TEST_FUNCTION",
+        eventName: 'startInitFunctionOrder',
+        type: 'TEST_FUNCTION',
         order: 1,
         count: 1,
     });
     postMessage({
-        eventName: "initFunctionInvoking",
-        name: "helloWorld",
+        eventName: 'initFunctionInvoking',
+        name: 'helloWorld',
         idx: 0.65,
     });
     postMessage({
-        eventName: "performMapLoadFunction",
+        eventName: 'performMapLoadFunction',
         idx: 65,
     });
-    loadscreenWrapperMain.style.display = "";
-    loadscreenWrapperMain.style.opacity = 1;
-    postMessage({ eventName: "onLogLine", message: "Awaiting scripts" });
+    loadscreenWrapperMain.style.display = '';
+    loadscreenWrapperMain.style.opacity = '1';
+    postMessage({ eventName: 'onLogLine', message: 'Awaiting scripts' });
 }

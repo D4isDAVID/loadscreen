@@ -10,11 +10,11 @@ lua54 'yes'
 use_experimental_fxv2_oal 'yes'
 
 client_scripts {
-    'client.lua',
+    'client/shutdown.lua',
 }
 
 server_scripts {
-    'server.js',
+    'server/handover.js',
 }
 
 files {

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "private": true,
+  "scripts": {
+    "lint": "prettier --ignore-path .gitignore -c .",
+    "format": "prettier --ignore-path .gitignore -w .",
+    "typecheck": "tsc -p server && tsc -p html"
+  },
+  "devDependencies": {
+    "@citizenfx/server": "^2.0.8903-1",
+    "@types/node": "16.9.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3"
+  }
+}

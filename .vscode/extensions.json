@@ -3,6 +3,7 @@
     "overextended.cfxlua-vscode",
     "EditorConfig.EditorConfig",
     "ecmel.vscode-html-css",
-    "sumneko.lua"
+    "sumneko.lua",
+    "esbenp.prettier-vscode"
   ]
 }

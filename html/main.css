@@ -9,7 +9,11 @@ html {
     width: 100vw;
     height: 100vh;
 
-    --background: linear-gradient(-15deg, rgb(5, 0, 7.5) 0%, rgb(15, 10, 25) 100%);
+    --background: linear-gradient(
+        -15deg,
+        rgb(5, 0, 7.5) 0%,
+        rgb(15, 10, 25) 100%
+    );
     --text-color: rgb(250, 250, 250);
 
     --progress-bar-background: rgba(8, 8, 16, 0.5);
@@ -79,7 +83,7 @@ progress {
     cursor: pointer;
 }
 
-.audio-controls-button>img {
+.audio-controls-button > img {
     width: 22px;
     padding: 5px;
     background-color: transparent;
@@ -87,7 +91,7 @@ progress {
     transition: background-color 0.25s;
 }
 
-.audio-controls-button:hover>img {
+.audio-controls-button:hover > img {
     background-color: rgba(0, 0, 0, 0.05) !important;
 }
 

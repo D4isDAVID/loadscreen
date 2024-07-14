@@ -1,4 +1,4 @@
-import { getHandoverData } from "./util/handover.js";
+import { getHandoverData } from './util/handover.js';
 
 const {
     playerName,
@@ -6,10 +6,12 @@ const {
     config: { serverMessage, finishingMessage },
 } = getHandoverData();
 
-/** @type {HTMLHeadingElement} */
-const serverMessageHeading = document.getElementById("server-message");
-/** @type {HTMLHeadingElement} */
-const finishingMessageHeading = document.getElementById("finishing-message");
+const serverMessageHeading = /** @type {HTMLHeadingElement} */ (
+    document.getElementById('server-message')
+);
+const finishingMessageHeading = /** @type {HTMLHeadingElement} */ (
+    document.getElementById('finishing-message')
+);
 
 /**
  * @param {string} str
@@ -17,7 +19,7 @@ const finishingMessageHeading = document.getElementById("finishing-message");
  */
 const replaceVariables = (str, vars) => {
     for (const [k, v] of Object.entries(vars))
-        str = str.replace("${" + k + "}", v);
+        str = str.replace('${' + k + '}', v);
     return str;
 };
 

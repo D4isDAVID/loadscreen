@@ -32,21 +32,21 @@
  * @type {NuiHandoverData}
  */
 const DEFAULT_HANDOVER_DATA = {
-    playerName: "Player",
-    serverName: "Server",
+    playerName: 'Player',
+    serverName: 'Server',
     paths: {
-        images: ["./assets/images/moon.png", "./assets/images/vinewood.png"],
-        music: ["./assets/music/fire.mp3"],
+        images: ['./assets/images/moon.png', './assets/images/vinewood.png'],
+        music: ['./assets/music/fire.mp3'],
         videos: [],
     },
     config: {
-        style: "classic",
-        serverMessage: "${playerName}, welcome to ${serverName}!",
-        finishingMessage: "Finishing up...",
+        style: 'classic',
+        serverMessage: '${playerName}, welcome to ${serverName}!',
+        finishingMessage: 'Finishing up...',
         music: true,
         musicVolume: 0.1,
         musicShuffle: false,
-        background: "image",
+        background: 'image',
         imageRate: 7500,
         imageShuffle: false,
         videoVolume: 0.1,
@@ -58,5 +58,5 @@ const DEFAULT_HANDOVER_DATA = {
  * @returns {NuiHandoverData}
  */
 export function getHandoverData() {
-    return window.nuiHandoverData ?? DEFAULT_HANDOVER_DATA;
+    return /** @type {any} */ (window).nuiHandoverData ?? DEFAULT_HANDOVER_DATA;
 }
