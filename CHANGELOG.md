@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Convar to switch between the available backgrounds (css, images, videos).
 - Convars for shuffling music & videos.
 - Convar for letting external resources handle the loadscreen shutdown.
+- Shutdown when spawnmanager isn't available, and `externalShutdown` is false.
 
 ### Changed
 
