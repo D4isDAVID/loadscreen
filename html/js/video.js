@@ -1,3 +1,4 @@
+import { backgroundVideo } from './util/elements.js';
 import { getHandoverData } from './util/handover.js';
 import { incrementWrap } from './util/increment-wrap.js';
 import { randomInt } from './util/random.js';
@@ -8,10 +9,6 @@ const {
 } = getHandoverData();
 
 if (background === 'video' && videos.length > 0) {
-    const backgroundVideo = /** @type {HTMLVideoElement} */ (
-        document.getElementById('background-video')
-    );
-
     backgroundVideo.volume = videoVolume;
     backgroundVideo.style.display = '';
 

@@ -1,17 +1,14 @@
+import { finishingMessage, serverMessage } from './util/elements.js';
 import { getHandoverData } from './util/handover.js';
 
 const {
     playerName,
     serverName,
-    config: { serverMessage, finishingMessage },
+    config: {
+        serverMessage: serverMessageContent,
+        finishingMessage: finishingMessageContent,
+    },
 } = getHandoverData();
-
-const serverMessageHeading = /** @type {HTMLHeadingElement} */ (
-    document.getElementById('server-message')
-);
-const finishingMessageHeading = /** @type {HTMLHeadingElement} */ (
-    document.getElementById('finishing-message')
-);
 
 /**
  * @param {string} str
@@ -23,9 +20,9 @@ const replaceVariables = (str, vars) => {
     return str;
 };
 
-serverMessageHeading.innerText = replaceVariables(serverMessage, {
+serverMessage.innerText = replaceVariables(serverMessageContent, {
     playerName,
     serverName,
 });
 
-finishingMessageHeading.innerText = finishingMessage;
+finishingMessage.innerText = finishingMessageContent;

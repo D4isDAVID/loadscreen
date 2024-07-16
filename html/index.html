@@ -27,45 +27,37 @@
             playsinline
             disablepictureinpicture
         ></video>
+
+        <div id="audio-wrapper" style="display: none">
+            <button id="audio-prev" class="audio-button" style="display: none">
+                <img src="./assets/icons/skip_previous.svg" />
+            </button>
+            <audio
+                id="background-audio"
+                controls
+                controlslist="nodownload noremoteplayback"
+            ></audio>
+            <button id="audio-next" class="audio-button" style="display: none">
+                <img src="./assets/icons/skip_next.svg" />
+            </button>
+        </div>
+
         <div id="loadscreen-wrapper">
-            <header id="loadscreen-wrapper-header">
+            <header>
                 <h1 id="server-message"></h1>
-                <div id="audio-controls-wrapper" style="display: none">
-                    <button
-                        id="audio-controls-prev"
-                        class="audio-controls-button"
-                        style="display: none"
-                    >
-                        <img src="./assets/icons/skip_previous.svg" />
-                    </button>
-                    <audio
-                        id="background-audio"
-                        controls
-                        controlslist="nodownload noremoteplayback"
-                    ></audio>
-                    <button
-                        id="audio-controls-next"
-                        class="audio-controls-button"
-                        style="display: none"
-                    >
-                        <img src="./assets/icons/skip_next.svg" />
-                    </button>
-                </div>
             </header>
-            <main
-                id="loadscreen-wrapper-main"
-                style="display: none; opacity: 0"
-            >
-                <h1 id="finishing-message"></h1>
-                <p id="log-line"></p>
-            </main>
-            <footer id="loadscreen-wrapper-footer">
-                <div id="mini-progress-wrapper" style="display: none">
-                    <p id="mini-progress-action"></p>
-                    <progress id="mini-progress"></progress>
+            <footer>
+                <div id="secondary-bar-wrapper" style="display: none">
+                    <p id="loading-action"></p>
+                    <progress id="secondary-bar"></progress>
                 </div>
-                <progress id="main-progress" max="1"></progress>
+                <progress id="primary-bar" max="1"></progress>
             </footer>
         </div>
     </body>
+
+    <div id="finishing-wrapper" style="display: none; opacity: 0">
+        <h1 id="finishing-message"></h1>
+        <p id="log-line"></p>
+    </div>
 </html>

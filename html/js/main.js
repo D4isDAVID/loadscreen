@@ -1,27 +1,12 @@
-const loadscreenWrapperHeader = /** @type {HTMLDivElement} */ (
-    document.getElementById('loadscreen-wrapper-header')
-);
-const loadscreenWrapperMain = /** @type {HTMLDivElement} */ (
-    document.getElementById('loadscreen-wrapper-main')
-);
-const loadscreenWrapperFooter = /** @type {HTMLDivElement} */ (
-    document.getElementById('loadscreen-wrapper-footer')
-);
-const logLine = /** @type {HTMLParagraphElement} */ (
-    document.getElementById('log-line')
-);
-const mainProgress = /** @type {HTMLProgressElement} */ (
-    document.getElementById('main-progress')
-);
-const miniProgressWrapper = /** @type {HTMLDivElement} */ (
-    document.getElementById('mini-progress-wrapper')
-);
-const miniProgressAction = /** @type {HTMLParagraphElement} */ (
-    document.getElementById('mini-progress-action')
-);
-const miniProgress = /** @type {HTMLProgressElement} */ (
-    document.getElementById('mini-progress')
-);
+import {
+    finishingWrapper,
+    loadingAction,
+    loadscreenWrapper,
+    logLine,
+    primaryBar,
+    secondaryBar,
+    secondaryBarWrapper,
+} from './util/elements.js';
 
 /** @type {boolean} */
 let processingDataFiles = false;
@@ -50,9 +35,9 @@ const prefixOrReplace = (str, base, sep) => {
  * @param {number} max
  */
 const beginMiniProgress = (max) => {
-    miniProgress.value = 0;
-    miniProgress.max = max;
-    miniProgressWrapper.style.display = '';
+    secondaryBar.value = 0;
+    secondaryBar.max = max;
+    loadingAction.style.display = '';
 };
 
 const updateMiniProgressAction = () => {
@@ -60,12 +45,12 @@ const updateMiniProgressAction = () => {
     action = prefixOrReplace(currentDataFile, action, ': ');
     action = prefixOrReplace(currentInitFunction, action, ': ');
     action = prefixOrReplace(currentInitFunctionType, action, ': ');
-    miniProgressAction.innerText = action ?? '';
+    loadingAction.innerText = action ?? '';
 };
 
 const finishMiniProgress = () => {
-    miniProgressWrapper.style.display = 'none';
-    miniProgressAction.innerText = '';
+    secondaryBarWrapper.style.display = 'none';
+    loadingAction.innerText = '';
 };
 
 const handlers = {
@@ -73,13 +58,12 @@ const handlers = {
      * @param {{ eventName: 'loadProgress', loadFraction: number }} data
      */
     loadProgress({ loadFraction }) {
-        mainProgress.value = loadFraction;
+        primaryBar.value = loadFraction;
         if (loadFraction === 1) {
             finishMiniProgress();
-            loadscreenWrapperMain.style.display = '';
-            loadscreenWrapperMain.style.opacity = '1';
-            loadscreenWrapperHeader.style.opacity = '0';
-            loadscreenWrapperFooter.style.opacity = '0';
+            finishingWrapper.style.display = '';
+            finishingWrapper.style.opacity = '1';
+            loadscreenWrapper.style.opacity = '0';
         }
     },
 
@@ -105,7 +89,7 @@ const handlers = {
         currentMap = null;
         currentDataFile = name;
         updateMiniProgressAction();
-        if (processingDataFiles) miniProgress.value += 1;
+        if (processingDataFiles) secondaryBar.value += 1;
     },
 
     /**
@@ -149,7 +133,7 @@ const handlers = {
      */
     initFunctionInvoking({ name, idx }) {
         currentInitFunction = name;
-        miniProgress.value = idx;
+        secondaryBar.value = idx;
         updateMiniProgressAction();
     },
 
@@ -195,7 +179,7 @@ if (!('invokeNative' in window)) {
         eventName: 'performMapLoadFunction',
         idx: 65,
     });
-    loadscreenWrapperMain.style.display = '';
-    loadscreenWrapperMain.style.opacity = '1';
+    finishingWrapper.style.display = '';
+    finishingWrapper.style.opacity = '1';
     postMessage({ eventName: 'onLogLine', message: 'Awaiting scripts' });
 }

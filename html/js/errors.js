@@ -1,9 +1,4 @@
-const errorWrapper = /** @type {HTMLDivElement} */ (
-    document.getElementById('error-wrapper')
-);
-const errorLog = /** @type {HTMLTextAreaElement} */ (
-    document.getElementById('error-log')
-);
+import { errorLog, errorWrapper } from './util/elements.js';
 
 window.addEventListener('error', (event) => {
     errorWrapper.style.display = '';

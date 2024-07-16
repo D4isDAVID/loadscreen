@@ -17,48 +17,43 @@
     overflow: hidden;
 }
 
-#loadscreen-wrapper-header {
+#loadscreen-wrapper > header {
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
     gap: 0.5rem;
-    transition: var(--finishing-transition);
 }
 
-#audio-controls-wrapper {
-    position: fixed;
-    left: 1rem;
-    bottom: 1rem;
-}
-
-#loadscreen-wrapper-main {
-    position: fixed;
-    text-align: center;
-    transition: var(--finishing-transition);
-}
-
-#loadscreen-wrapper-footer {
+#loadscreen-wrapper > footer {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     gap: 0.5rem;
-    transition: var(--finishing-transition);
 }
 
-#mini-progress-wrapper {
+#secondary-bar-wrapper {
     display: block;
 }
 
-#mini-progress-action {
+#loading-action {
     font-size: 1rem;
     white-space: nowrap;
 }
 
-#mini-progress {
+#secondary-bar {
     display: none;
 }
 
-#main-progress {
+#primary-bar {
     block-size: 0.75rem;
     inline-size: 20rem;
+}
+
+#finishing-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
 }

@@ -95,7 +95,11 @@ progress {
     object-fit: cover;
 }
 
-#audio-controls-wrapper {
+#audio-wrapper {
+    position: fixed;
+    right: 1.75rem;
+    bottom: 4rem;
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -104,7 +108,7 @@ progress {
     border-radius: 1.7rem;
 }
 
-.audio-controls-button {
+.audio-button {
     appearance: none;
     border: none;
     display: flex;
@@ -114,11 +118,11 @@ progress {
     background-color: transparent;
 }
 
-.audio-controls-button:hover {
+.audio-button:hover {
     cursor: pointer;
 }
 
-.audio-controls-button > img {
+.audio-button > img {
     width: 22px;
     padding: 5px;
     background-color: transparent;
@@ -126,14 +130,20 @@ progress {
     transition: background-color 0.25s;
 }
 
-.audio-controls-button:hover > img {
+.audio-button:hover > img {
     background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-#audio-controls-prev {
+#audio-prev {
     transform: translateX(10px);
 }
 
-#audio-controls-next {
+#audio-next {
     transform: translateX(-10px);
+}
+
+/* todo: check */
+#loadscreen-wrapper,
+#finishing-wrapper {
+    transition: var(--finishing-transition);
 }

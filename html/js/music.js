@@ -1,3 +1,9 @@
+import {
+    audioNext,
+    audioPrev,
+    audioWrapper,
+    backgroundAudio,
+} from './util/elements.js';
 import { getHandoverData } from './util/handover.js';
 import { decrementWrap, incrementWrap } from './util/increment-wrap.js';
 import { randomInt } from './util/random.js';
@@ -8,21 +14,8 @@ const {
 } = getHandoverData();
 
 if (musicEnabled && music.length > 0) {
-    const audioControlsWrapper = /** @type {HTMLDivElement} */ (
-        document.getElementById('audio-controls-wrapper')
-    );
-    const backgroundAudio = /** @type {HTMLAudioElement} */ (
-        document.getElementById('background-audio')
-    );
-    const audioControlsPrev = /** @type {HTMLButtonElement} */ (
-        document.getElementById('audio-controls-prev')
-    );
-    const audioControlsNext = /** @type {HTMLButtonElement} */ (
-        document.getElementById('audio-controls-next')
-    );
-
     backgroundAudio.volume = musicVolume;
-    audioControlsWrapper.style.display = '';
+    audioWrapper.style.display = '';
 
     /**
      * @param {string} fileName
@@ -36,8 +29,8 @@ if (musicEnabled && music.length > 0) {
         backgroundAudio.loop = true;
         play(/** @type {string} */ (music[0]));
     } else {
-        audioControlsPrev.style.display = '';
-        audioControlsNext.style.display = '';
+        audioPrev.style.display = '';
+        audioNext.style.display = '';
 
         /** @type {number | null} */
         let currentSong = null;
@@ -57,8 +50,8 @@ if (musicEnabled && music.length > 0) {
             play(/** @type {string} */ (music[currentSong]));
         };
 
-        audioControlsPrev.addEventListener('click', prevSong);
-        audioControlsNext.addEventListener('click', nextSong);
+        audioPrev.addEventListener('click', prevSong);
+        audioNext.addEventListener('click', nextSong);
         backgroundAudio.addEventListener(
             'ended',
             musicShuffle ? randomSong : nextSong,
