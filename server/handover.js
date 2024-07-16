@@ -61,16 +61,15 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
                 'Finishing up...',
             ),
 
+            initialAudioVolume:
+                GetConvarInt('loadscreen:initialAudioVolume', 10) / 100,
+
             music: GetConvarInt('loadscreen:music', 1) == 1,
-            musicVolume: GetConvarInt('loadscreen:musicVolume', 10) / 100,
             musicShuffle: GetConvarInt('loadscreen:musicShuffle', 0) == 1,
 
             background: GetConvar('loadscreen:background', 'image'),
-
             imageRate: GetConvarInt('loadscreen:imageRate', 7500),
             imageShuffle: GetConvarInt('loadscreen:imageShuffle', 0) == 1,
-
-            videoVolume: GetConvarInt('loadscreen:videoVolume', 10) / 100,
             videoShuffle: GetConvarInt('loadscreen:videoShuffle', 0) == 1,
         },
     });

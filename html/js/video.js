@@ -5,11 +5,11 @@ import { randomInt } from './util/random.js';
 
 const {
     paths: { videos },
-    config: { background, videoVolume, videoShuffle },
+    config: { background, initialAudioVolume, videoShuffle },
 } = getHandoverData();
 
 if (background === 'video' && videos.length > 0) {
-    backgroundVideo.volume = videoVolume;
+    backgroundVideo.volume = initialAudioVolume;
     backgroundVideo.style.display = '';
 
     if (videos.length === 1) {

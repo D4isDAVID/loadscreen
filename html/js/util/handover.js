@@ -10,13 +10,12 @@
  * @property {string} style
  * @property {string} serverMessage
  * @property {string} finishingMessage
+ * @property {number} initialAudioVolume
  * @property {boolean} music
- * @property {number} musicVolume
  * @property {boolean} musicShuffle
  * @property {string} background
  * @property {number} imageRate
  * @property {boolean} imageShuffle
- * @property {number} videoVolume
  * @property {boolean} videoShuffle
  */
 
@@ -43,13 +42,12 @@ const DEFAULT_HANDOVER_DATA = {
         style: 'classic',
         serverMessage: '${playerName}, welcome to ${serverName}!',
         finishingMessage: 'Finishing up...',
+        initialAudioVolume: 0.1,
         music: true,
-        musicVolume: 0.1,
         musicShuffle: false,
         background: 'image',
         imageRate: 7500,
         imageShuffle: false,
-        videoVolume: 0.1,
         videoShuffle: false,
     },
 };

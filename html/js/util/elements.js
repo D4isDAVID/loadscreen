@@ -8,18 +8,21 @@ export const errorLog = /** @type {HTMLParagraphElement} */ (
 export const backgroundVideo = /** @type {HTMLVideoElement} */ (
     document.getElementById('background-video')
 );
-
-export const audioWrapper = /** @type {HTMLDivElement} */ (
-    document.getElementById('audio-wrapper')
-);
 export const backgroundAudio = /** @type {HTMLAudioElement} */ (
     document.getElementById('background-audio')
 );
-export const audioPrev = /** @type {HTMLButtonElement} */ (
-    document.getElementById('audio-prev')
+
+export const audioControls = /** @type {HTMLDivElement} */ (
+    document.getElementById('audio-controls')
 );
-export const audioNext = /** @type {HTMLButtonElement} */ (
-    document.getElementById('audio-next')
+export const audioVolume = /** @type {HTMLInputElement} */ (
+    document.getElementById('audio-volume')
+);
+export const audioMute = /** @type {HTMLButtonElement} */ (
+    document.getElementById('audio-mute')
+);
+export const audioMuteIcon = /** @type {HTMLImageElement} */ (
+    document.getElementById('audio-mute-icon')
 );
 
 export const loadscreenWrapper = /** @type {HTMLDivElement} */ (

@@ -95,7 +95,7 @@ progress {
     object-fit: cover;
 }
 
-#audio-wrapper {
+#audio-controls {
     position: fixed;
     right: 1.75rem;
     bottom: 4rem;
@@ -104,42 +104,35 @@ progress {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: rgb(241, 243, 244);
-    border-radius: 1.7rem;
+    gap: 0.35rem;
+
+    background-color: var(--progress-bar-background);
+    border-radius: var(--border-round);
 }
 
-.audio-button {
+#audio-mute {
     appearance: none;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+
     background-color: transparent;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--border-round);
 }
 
-.audio-button:hover {
+#audio-mute:hover {
     cursor: pointer;
 }
 
-.audio-button > img {
-    width: 22px;
-    padding: 5px;
-    background-color: transparent;
-    border-radius: 1rem;
-    transition: background-color 0.25s;
+#audio-volume {
+    display: none;
+    margin-left: 0.85rem;
 }
 
-.audio-button:hover > img {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-}
-
-#audio-prev {
-    transform: translateX(10px);
-}
-
-#audio-next {
-    transform: translateX(-10px);
+#audio-controls:hover > #audio-volume {
+    display: inline-block !important;
 }
 
 /* todo: check */

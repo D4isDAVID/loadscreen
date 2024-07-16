@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Moved the audio controls to the bottom left in the minimal style.
 - Moved the config from a JS file to FiveM convars.
 - Rounded the loading bars' borders.
+- Replaced the default audio controls with a cleaner version that also controls the background video's volume.
 - Refactored the internal code.
   - Reformatted and typechecked the JS code.
   - Added GitHub workflows for testing the code and for publishing a GitHub release.

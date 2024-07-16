@@ -8,6 +8,7 @@
         <script src="./js/music.js" type="module"></script>
         <script src="./js/images.js" type="module"></script>
         <script src="./js/video.js" type="module"></script>
+        <script src="./js/controls.js" type="module"></script>
     </head>
 
     <body>
@@ -27,20 +28,7 @@
             playsinline
             disablepictureinpicture
         ></video>
-
-        <div id="audio-wrapper" style="display: none">
-            <button id="audio-prev" class="audio-button" style="display: none">
-                <img src="./assets/icons/skip_previous.svg" />
-            </button>
-            <audio
-                id="background-audio"
-                controls
-                controlslist="nodownload noremoteplayback"
-            ></audio>
-            <button id="audio-next" class="audio-button" style="display: none">
-                <img src="./assets/icons/skip_next.svg" />
-            </button>
-        </div>
+        <audio id="background-audio"></audio>
 
         <div id="loadscreen-wrapper">
             <header>
@@ -59,5 +47,12 @@
     <div id="finishing-wrapper" style="display: none; opacity: 0">
         <h1 id="finishing-message"></h1>
         <p id="log-line"></p>
+    </div>
+
+    <div id="audio-controls" style="display: none">
+        <input id="audio-volume" min="0" max="1" step="0.01" type="range" />
+        <button id="audio-mute">
+            <img id="audio-mute-icon" src="./assets/icons/volume_up.svg" />
+        </button>
     </div>
 </html>
