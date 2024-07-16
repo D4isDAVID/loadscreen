@@ -26,12 +26,12 @@ if (
      * @param {number} volume
      */
     const updateVolume = (volume) => {
+        muted = volume === 0;
         backgroundVideo.volume = volume;
         backgroundAudio.volume = volume;
-        audioMuteIcon.src =
-            volume === 0
-                ? './assets/icons/no_sound.svg'
-                : './assets/icons/volume_up.svg';
+        audioMuteIcon.src = muted
+            ? './assets/icons/no_sound.svg'
+            : './assets/icons/volume_up.svg';
     };
 
     audioVolume.addEventListener('input', () => {
@@ -40,8 +40,7 @@ if (
     });
 
     audioMute.addEventListener('click', () => {
-        muted = !muted;
+        updateVolume(muted ? volume : 0);
         audioVolume.value = muted ? '0' : `${volume}`;
-        updateVolume(muted ? 0 : volume);
     });
 }
