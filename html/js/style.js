@@ -8,6 +8,4 @@ const link = document.createElement('link');
 link.href = `./styles/${style}.css`;
 link.rel = 'stylesheet';
 
-/** @type {HTMLHeadElement} */ (
-    document.getElementsByTagName('head')[0]
-).appendChild(link);
+document.head.appendChild(link);
