@@ -18,7 +18,13 @@
                 <h3>Error log</h3>
             </header>
             <p>Please copy & report the errors below.</p>
-            <textarea id="error-log" rows="10" cols="50" readonly></textarea>
+            <textarea
+                id="error-log"
+                class="hover"
+                rows="10"
+                cols="50"
+                readonly
+            ></textarea>
         </div>
 
         <video
@@ -49,9 +55,9 @@
         <p id="log-line"></p>
     </div>
 
-    <div id="audio-controls" style="display: none">
+    <div id="audio-controls" class="hover" style="display: none">
         <input id="audio-volume" min="0" max="1" step="0.01" type="range" />
-        <button id="audio-mute">
+        <button id="audio-mute" class="hover">
             <img id="audio-mute-icon" src="./assets/icons/volume_up.svg" />
         </button>
     </div>

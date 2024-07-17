@@ -18,15 +18,18 @@ if (
     (background === 'video' && videos.length > 0)
 ) {
     audioControls.style.display = '';
+    /** @type {boolean} */
+    let muted;
+    /** @type {number} */
+    let volume;
     audioVolume.value = `${initialAudioVolume}`;
-    let muted = initialAudioVolume === 0;
-    let volume = initialAudioVolume;
 
     /**
      * @param {number} volume
      */
     const updateVolume = (volume) => {
         muted = volume === 0;
+        audioVolume.style.setProperty('--value', `${volume * 100}%`);
         backgroundVideo.volume = volume;
         backgroundAudio.volume = volume;
         audioMuteIcon.src = muted
@@ -43,4 +46,6 @@ if (
         updateVolume(muted ? volume : 0);
         audioVolume.value = muted ? '0' : `${volume}`;
     });
+
+    updateVolume(initialAudioVolume);
 }

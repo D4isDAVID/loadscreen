@@ -22,6 +22,9 @@ html {
 
     --finishing-transition: opacity 0.5s;
 
+    --border-color: rgb(64, 64, 64);
+    --hover-transition: opacity 0.1s;
+
     background-image: var(--background);
     background-position: center center;
     background-repeat: no-repeat;
@@ -51,6 +54,46 @@ progress {
     background: var(--progress-value-background);
 }
 
+input[type='range'] {
+    appearance: none;
+
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: transparent;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    appearance: none;
+
+    height: 0.35rem;
+
+    border-radius: 1rem;
+    background: linear-gradient(to right, white, white), var(--border-color);
+    background-size: var(--value, 0%) 100%;
+    background-repeat: no-repeat;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    appearance: none;
+
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(calc(0.35rem / 2 - 50%));
+
+    border: 2px solid white;
+    border-radius: 1rem;
+    background-color: black;
+}
+
+.hover {
+    opacity: 0.75;
+    transition: var(--hover-transition);
+}
+
+.hover:hover {
+    opacity: 1;
+}
+
 #error-wrapper {
     position: fixed;
     top: 1rem;
@@ -66,6 +109,7 @@ progress {
     background-color: rgba(0, 0, 0, 0.9);
     color: rgb(250, 250, 250);
     padding: 0.75rem;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-round);
     z-index: 1;
 }
@@ -77,13 +121,14 @@ progress {
 }
 
 #error-log {
-    min-width: calc(100% - 1.1rem);
-    min-height: calc(100% - 1.1rem);
-    max-width: calc(100% - 1.1rem);
-    max-height: calc(100% - 1.1rem);
-    background-color: transparent;
+    min-width: calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+
+    background-color: rgb(15, 15, 15);
     color: rgb(225, 225, 225);
     padding: 0.5rem;
+    border: none;
     border-radius: var(--border-round);
 }
 
@@ -105,26 +150,36 @@ progress {
     position: fixed;
     right: 1.75rem;
     bottom: 4rem;
+    overflow: hidden;
+    width: 2.5rem;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
+    justify-content: end;
 
     background-color: var(--progress-bar-background);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-round);
+
+    transition: 0.25s ease-out;
+}
+
+#audio-controls:hover {
+    width: 7.75rem;
 }
 
 #audio-mute {
     appearance: none;
-    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
 
     background-color: transparent;
-    padding: 0.35rem 0.5rem;
+    padding: 0.5rem;
+    transition: var(--hover-transition);
+
+    border: none;
     border-radius: var(--border-round);
 }
 
@@ -133,12 +188,9 @@ progress {
 }
 
 #audio-volume {
-    display: none;
-    margin-left: 0.85rem;
-}
-
-#audio-controls:hover > #audio-volume {
-    display: inline-block !important;
+    position: absolute;
+    right: 3rem;
+    width: 4rem;
 }
 
 /* todo: check */
