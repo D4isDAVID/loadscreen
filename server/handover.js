@@ -89,6 +89,10 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
                 'loadscreen:shadowColor',
                 'rgba(8, 8, 16, 0.5)',
             ),
+            fontFamily: GetConvar(
+                'loadscreen:fontFamily',
+                "'Segoe UI', Arial, Helvetica, sans-serif",
+            ),
 
             logo: GetConvarInt('loadscreen:logo', 1) == 1,
             serverMessage: GetConvar(

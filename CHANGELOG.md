@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Convars for toggling various parts of the loading screen on/off.
 - Option for displaying a logo.
 - Convars for changing the screen colors & CSS background.
+- Convar option for setting a custom font family.
 
 ### Changed
 

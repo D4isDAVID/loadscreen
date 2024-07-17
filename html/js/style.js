@@ -8,6 +8,7 @@ const {
         primaryColor,
         secondaryColor,
         shadowColor,
+        fontFamily,
     },
 } = getHandoverData();
 
@@ -27,3 +28,4 @@ root.style.setProperty('--text-color', textColor);
 root.style.setProperty('--primary-color', primaryColor);
 root.style.setProperty('--secondary-color', secondaryColor);
 root.style.setProperty('--shadow-color', shadowColor);
+root.style.setProperty('--font-family', fontFamily);

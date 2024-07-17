@@ -14,6 +14,7 @@
  * @property {string} primaryColor
  * @property {string} secondaryColor
  * @property {string} shadowColor
+ * @property {string} fontFamily
  * @property {boolean} logo
  * @property {string} serverMessage
  * @property {boolean} primaryBar
@@ -58,6 +59,7 @@ const DEFAULT_HANDOVER_DATA = {
         primaryColor: 'rgb(64, 64, 255)',
         secondaryColor: 'rgb(64, 64, 64)',
         shadowColor: 'rgba(8, 8, 16, 0.5)',
+        fontFamily: "'Segoe UI', Arial, Helvetica, sans-serif",
         logo: true,
         serverMessage: '${playerName}, welcome to ${serverName}!',
         primaryBar: true,
