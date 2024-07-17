@@ -8,50 +8,52 @@ import {
     secondaryBarWrapper,
 } from './util/elements.js';
 
-/** @type {boolean} */
-let processingDataFiles = false;
-/** @type {string | null} */
-let currentDataFile = null;
-/** @type {string | null} */
-let currentMap = null;
-/** @type {string | null} */
-let currentInitFunctionType = null;
-/** @type {string | null} */
-let currentInitFunction = null;
-
 /**
- * @param {string | null} str
- * @param {string | null} base
- * @param {string} sep
- * @returns {string | null}
+ * @typedef {Object} LoadingAction
+ * @property {boolean} startedDataFiles
+ * @property {string | null} initFunctionType
+ * @property {string | null} initFunction
+ * @property {string | null} dataFile
+ * @property {string | null} map
+ * @property {() => string} toString
  */
-const prefixOrReplace = (str, base, sep) => {
-    if (!base) return str;
-    if (!str) return base;
-    return `${str}${sep}${base}`;
+
+/** @type {LoadingAction} */
+const currentLoadingAction = {
+    startedDataFiles: false,
+    initFunctionType: null,
+    initFunction: null,
+    dataFile: null,
+    map: null,
+    toString() {
+        return [
+            this.initFunctionType,
+            this.initFunction,
+            this.dataFile,
+            this.map,
+        ]
+            .filter((s) => s !== null)
+            .join(': ');
+    },
 };
 
 /**
  * @param {number} max
  */
-const beginMiniProgress = (max) => {
+function showSecondaryBar(max) {
     secondaryBar.value = 0;
     secondaryBar.max = max;
-    loadingAction.style.display = '';
-};
+    secondaryBarWrapper.style.display = '';
+}
 
-const updateMiniProgressAction = () => {
-    let action = currentMap;
-    action = prefixOrReplace(currentDataFile, action, ': ');
-    action = prefixOrReplace(currentInitFunction, action, ': ');
-    action = prefixOrReplace(currentInitFunctionType, action, ': ');
-    loadingAction.innerText = action ?? '';
-};
+function updateLoadingAction() {
+    loadingAction.innerText = currentLoadingAction.toString();
+}
 
-const finishMiniProgress = () => {
+function hideSecondaryBar() {
     secondaryBarWrapper.style.display = 'none';
     loadingAction.innerText = '';
-};
+}
 
 const handlers = {
     /**
@@ -60,7 +62,7 @@ const handlers = {
     loadProgress({ loadFraction }) {
         primaryBar.value = loadFraction;
         if (loadFraction === 1) {
-            finishMiniProgress();
+            hideSecondaryBar();
             finishingWrapper.style.display = '';
             finishingWrapper.style.opacity = '1';
             loadscreenWrapper.style.opacity = '0';
@@ -78,82 +80,82 @@ const handlers = {
      * @param {{ eventName: 'startDataFileEntries', count: number }} data
      */
     startDataFileEntries({ count }) {
-        processingDataFiles = true;
-        beginMiniProgress(count);
+        currentLoadingAction.startedDataFiles = true;
+        showSecondaryBar(count);
     },
 
     /**
      * @param {{ eventName: 'onDataFileEntry', name: string, type: number, isNew: boolean }} data
      */
     onDataFileEntry({ name }) {
-        currentMap = null;
-        currentDataFile = name;
-        updateMiniProgressAction();
-        if (processingDataFiles) secondaryBar.value += 1;
+        currentLoadingAction.map = null;
+        currentLoadingAction.dataFile = name;
+        updateLoadingAction();
+        if (currentLoadingAction.startedDataFiles) secondaryBar.value += 1;
     },
 
     /**
      * @param {{ eventName: 'performMapLoadFunction', idx: number }} data
      */
     performMapLoadFunction({ idx }) {
-        currentMap = `Map ${idx}`;
-        updateMiniProgressAction();
+        currentLoadingAction.map = `Map ${idx}`;
+        updateLoadingAction();
     },
 
     /**
-     * @param {{ eventName: 'endDataFileEntries' }} _data
+     * @param {{ eventName: 'endDataFileEntries' }} data
      */
-    endDataFileEntries(_data) {
-        finishMiniProgress();
-        currentMap = null;
-        currentDataFile = null;
-        processingDataFiles = false;
+    endDataFileEntries({}) {
+        hideSecondaryBar();
+        currentLoadingAction.map = null;
+        currentLoadingAction.dataFile = null;
+        currentLoadingAction.startedDataFiles = false;
     },
 
     /**
      * @param {{ eventName: 'startInitFunction', type: string }} data
      */
     startInitFunction({ type }) {
-        currentInitFunctionType = type;
-        updateMiniProgressAction();
-        beginMiniProgress(0); // just a random value to begin the mini progress bar
+        currentLoadingAction.initFunctionType = type;
+        updateLoadingAction();
+        showSecondaryBar(0); // just a random value to begin the mini progress bar
     },
 
     /**
      * @param {{ eventName: 'startInitFunctionOrder', type: string, order: number, count: number }} data
      */
     startInitFunctionOrder({ type, order, count }) {
-        currentInitFunctionType = `${type} (${order})`;
-        updateMiniProgressAction();
-        beginMiniProgress(count);
+        currentLoadingAction.initFunctionType = `${type} (${order})`;
+        updateLoadingAction();
+        showSecondaryBar(count);
     },
 
     /**
      * @param {{ eventName: 'initFunctionInvoking', type: string, name: string, idx: number }} data
      */
     initFunctionInvoking({ name, idx }) {
-        currentInitFunction = name;
+        currentLoadingAction.initFunction = name;
         secondaryBar.value = idx;
-        updateMiniProgressAction();
+        updateLoadingAction();
     },
 
     /**
-     * @param {{ eventName: 'initFunctionInvoked', type: string, name: string }} _data
+     * @param {{ eventName: 'initFunctionInvoked', type: string, name: string }} data
      */
-    initFunctionInvoked(_data) {
-        currentMap = null;
-        currentDataFile = null;
-        currentInitFunction = null;
-        updateMiniProgressAction();
+    initFunctionInvoked({}) {
+        currentLoadingAction.map = null;
+        currentLoadingAction.dataFile = null;
+        currentLoadingAction.initFunction = null;
+        updateLoadingAction();
     },
 
     /**
      * @param {{ eventName: 'endInitFunction', type: string }} _data
      */
     endInitFunction(_data) {
-        finishMiniProgress();
-        currentInitFunction = null;
-        currentInitFunctionType = null;
+        hideSecondaryBar();
+        currentLoadingAction.initFunction = null;
+        currentLoadingAction.initFunctionType = null;
     },
 };
 
