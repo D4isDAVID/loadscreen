@@ -9,6 +9,11 @@
 /**
  * @typedef {Object} NuiHandoverConfig
  * @property {string} style
+ * @property {string} background
+ * @property {string} textColor
+ * @property {string} primaryColor
+ * @property {string} secondaryColor
+ * @property {string} shadowColor
  * @property {boolean} logo
  * @property {string} serverMessage
  * @property {boolean} primaryBar
@@ -21,7 +26,6 @@
  * @property {number} initialAudioVolume
  * @property {boolean} music
  * @property {boolean} musicShuffle
- * @property {string} background
  * @property {number} imageRate
  * @property {boolean} imageShuffle
  * @property {boolean} videoShuffle
@@ -49,6 +53,11 @@ const DEFAULT_HANDOVER_DATA = {
     },
     config: {
         style: 'classic',
+        background: 'image',
+        textColor: 'rgb(250, 250, 250)',
+        primaryColor: 'rgb(64, 64, 255)',
+        secondaryColor: 'rgb(64, 64, 64)',
+        shadowColor: 'rgba(8, 8, 16, 0.5)',
         logo: true,
         serverMessage: '${playerName}, welcome to ${serverName}!',
         primaryBar: true,
@@ -61,7 +70,6 @@ const DEFAULT_HANDOVER_DATA = {
         initialAudioVolume: 0.1,
         music: true,
         musicShuffle: false,
-        background: 'image',
         imageRate: 7500,
         imageShuffle: false,
         videoShuffle: false,

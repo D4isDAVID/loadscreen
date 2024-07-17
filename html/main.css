@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
+:root {
+    --border-round: 0.35rem;
+    --hover-transition: opacity 0.1s;
+    --finishing-transition: opacity 0.5s;
+}
+
 * {
     margin: 0 0;
     padding: 0 0;
@@ -8,22 +14,6 @@
 html {
     width: 100vw;
     height: 100vh;
-
-    --background: linear-gradient(
-        -15deg,
-        rgb(5, 0, 7.5) 0%,
-        rgb(15, 10, 25) 100%
-    );
-    --text-color: rgb(250, 250, 250);
-    --border-round: 0.35rem;
-
-    --progress-bar-background: rgba(8, 8, 16, 0.5);
-    --progress-value-background: rgb(64, 64, 255);
-
-    --finishing-transition: opacity 0.5s;
-
-    --border-color: rgb(64, 64, 64);
-    --hover-transition: opacity 0.1s;
 
     background-image: var(--background);
     background-position: center center;
@@ -47,11 +37,11 @@ progress {
 }
 
 ::-webkit-progress-bar {
-    background: var(--progress-bar-background);
+    background: var(--shadow-color);
 }
 
 ::-webkit-progress-value {
-    background: var(--progress-value-background);
+    background: var(--primary-color);
 }
 
 input[type='range'] {
@@ -68,7 +58,7 @@ input[type='range']::-webkit-slider-runnable-track {
     height: 0.35rem;
 
     border-radius: 1rem;
-    background: linear-gradient(to right, white, white), var(--border-color);
+    background: linear-gradient(to right, white, white), var(--secondary-color);
     background-size: var(--value, 0%) 100%;
     background-repeat: no-repeat;
 }
@@ -109,7 +99,7 @@ input[type='range']::-webkit-slider-thumb {
     background-color: rgba(0, 0, 0, 0.9);
     color: rgb(250, 250, 250);
     padding: 0.75rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--secondary-color);
     border-radius: var(--border-round);
     z-index: 1;
 }
@@ -164,8 +154,8 @@ input[type='range']::-webkit-slider-thumb {
     align-items: center;
     justify-content: end;
 
-    background-color: var(--progress-bar-background);
-    border: 1px solid var(--border-color);
+    background-color: var(--shadow-color);
+    border: 1px solid var(--secondary-color);
     border-radius: var(--border-round);
 
     transition: 0.25s ease-out;

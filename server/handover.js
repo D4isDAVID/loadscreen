@@ -75,6 +75,20 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
 
         config: {
             style: GetConvar('loadscreen:style', 'classic'),
+            background: GetConvar('loadscreen:background', 'image'),
+            textColor: GetConvar('loadscreen:textColor', 'rgb(250, 250, 250)'),
+            primaryColor: GetConvar(
+                'loadscreen:primaryColor',
+                'rgb(64, 64, 255)',
+            ),
+            secondaryColor: GetConvar(
+                'loadscreen:secondaryColor',
+                'rgb(64, 64, 64)',
+            ),
+            shadowColor: GetConvar(
+                'loadscreen:shadowColor',
+                'rgba(8, 8, 16, 0.5)',
+            ),
 
             logo: GetConvarInt('loadscreen:logo', 1) == 1,
             serverMessage: GetConvar(
@@ -98,7 +112,6 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
             music: GetConvarInt('loadscreen:music', 1) == 1,
             musicShuffle: GetConvarInt('loadscreen:musicShuffle', 0) == 1,
 
-            background: GetConvar('loadscreen:background', 'image'),
             imageRate: GetConvarInt('loadscreen:imageRate', 7500),
             imageShuffle: GetConvarInt('loadscreen:imageShuffle', 0) == 1,
             videoShuffle: GetConvarInt('loadscreen:videoShuffle', 0) == 1,
