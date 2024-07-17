@@ -7,6 +7,7 @@ import {
     secondaryBar,
     secondaryBarWrapper,
 } from './util/elements.js';
+import { isBrowserEnv } from './util/env.js';
 
 /**
  * @typedef {Object} LoadingAction
@@ -163,7 +164,7 @@ window.addEventListener('message', ({ data }) =>
     handlers[/** @type {keyof handlers} */ (data.eventName)]?.(data),
 );
 
-if (!('invokeNative' in window)) {
+if (isBrowserEnv()) {
     postMessage({ eventName: 'loadProgress', loadFraction: 0.65 });
     postMessage({ eventName: 'startDataFileEntries', count: 100 });
     postMessage({

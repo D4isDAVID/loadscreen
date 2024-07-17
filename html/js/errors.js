@@ -1,4 +1,5 @@
 import { errorLog, errorWrapper } from './util/elements.js';
+import { isBrowserEnv } from './util/env.js';
 import { getHandoverData } from './util/handover.js';
 
 const { config } = getHandoverData();
@@ -9,7 +10,7 @@ if (config.errorLog) {
         errorLog.textContent = `${errorLog.textContent}${event.type}: ${event.message}\n`;
     });
 
-    if (!('invokeNative' in window)) {
+    if (isBrowserEnv()) {
         errorWrapper.style.display = '';
     }
 }
