@@ -30,6 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Reformatted and typechecked the JS code.
   - Added GitHub workflows for testing the code and for publishing a GitHub release.
   - Reorganized the HTML.
+  - Refactored some of the JS code.
 
 ### Removed
 
