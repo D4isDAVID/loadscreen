@@ -74,7 +74,7 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
         paths,
 
         config: {
-            style: GetConvar('loadscreen:style', 'classic'),
+            style: GetConvar('loadscreen:style', 'minimal'),
             background: GetConvar('loadscreen:background', 'image'),
             backgroundBrightness:
                 GetConvarInt('loadscreen:backgroundBrightness', 30) / 100,
@@ -102,8 +102,8 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
                 '${playerName}, welcome to ${serverName}!',
             ),
             primaryBar: GetConvarInt('loadscreen:primaryBar', 1) == 1,
-            secondaryBar: GetConvarInt('loadscreen:secondaryBar', 1) == 1,
-            loadingAction: GetConvarInt('loadscreen:loadingAction', 1) == 1,
+            secondaryBar: GetConvarInt('loadscreen:secondaryBar', 0) == 1,
+            loadingAction: GetConvarInt('loadscreen:loadingAction', 0) == 1,
             finishingMessage: GetConvar(
                 'loadscreen:finishingMessage',
                 'Finishing up...',

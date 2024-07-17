@@ -11,7 +11,7 @@ A simple loading screen for FiveM ([preview]).
 
 The loading screen features a main loading bar representing the % of total
 loading done, and a secondary loading bar representing the % of the current
-step done.
+step done. The secondary loading bar is disabled by default.
 
 ### Background Media
 
@@ -27,12 +27,17 @@ resource shuts it down, depending on the configuration.
 
 The loading screen comes with 3 styles by default:
 
-- Classic: the default style since v1.0.0;
+- Classic: the style provided since v1.0.0;
 - Modern: a modernized layout;
-- Minimal: everything is condensed and centered.
+- Minimal: everything is condensed and centered (default).
 
 The config can switch between these 3. Alternatively, you may create your own
 CSS style and use it in the config instead.
+
+### Fully Configurable
+
+This loading screen offers a huge amount of options to enable you to configure
+it for your server to a T.
 
 ## Configuration
 
