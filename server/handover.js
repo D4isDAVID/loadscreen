@@ -56,10 +56,16 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
                 'loadscreen:serverMessage',
                 '${playerName}, welcome to ${serverName}!',
             ),
+            primaryBar: GetConvarInt('loadscreen:primaryBar', 1) == 1,
+            secondaryBar: GetConvarInt('loadscreen:secondaryBar', 1) == 1,
+            loadingAction: GetConvarInt('loadscreen:loadingAction', 1) == 1,
             finishingMessage: GetConvar(
                 'loadscreen:finishingMessage',
                 'Finishing up...',
             ),
+            logLine: GetConvarInt('loadscreen:logLine', 1) == 1,
+            audioControls: GetConvarInt('loadscreen:audioControls', 1) == 1,
+            errorLog: GetConvarInt('loadscreen:errorLog', 1) == 1,
 
             initialAudioVolume:
                 GetConvarInt('loadscreen:initialAudioVolume', 10) / 100,

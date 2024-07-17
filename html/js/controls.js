@@ -10,12 +10,18 @@ import { getHandoverData } from './util/handover.js';
 
 const {
     paths: { music, videos },
-    config: { music: musicEnabled, background, initialAudioVolume },
+    config: {
+        audioControls: audioControlsEnabled,
+        music: musicEnabled,
+        background,
+        initialAudioVolume,
+    },
 } = getHandoverData();
 
 if (
-    (musicEnabled && music.length > 0) ||
-    (background === 'video' && videos.length > 0)
+    audioControlsEnabled &&
+    ((musicEnabled && music.length > 0) ||
+        (background === 'video' && videos.length > 0))
 ) {
     audioControls.style.display = '';
     /** @type {boolean} */

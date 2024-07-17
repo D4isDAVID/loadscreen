@@ -9,7 +9,13 @@
  * @typedef {Object} NuiHandoverConfig
  * @property {string} style
  * @property {string} serverMessage
+ * @property {boolean} primaryBar
+ * @property {boolean} secondaryBar
+ * @property {boolean} loadingAction
  * @property {string} finishingMessage
+ * @property {boolean} logLine
+ * @property {boolean} audioControls
+ * @property {boolean} errorLog
  * @property {number} initialAudioVolume
  * @property {boolean} music
  * @property {boolean} musicShuffle
@@ -39,9 +45,15 @@ const DEFAULT_HANDOVER_DATA = {
         videos: [],
     },
     config: {
-        style: 'classic',
+        style: 'modern',
         serverMessage: '${playerName}, welcome to ${serverName}!',
+        primaryBar: true,
+        secondaryBar: true,
+        loadingAction: true,
         finishingMessage: 'Finishing up...',
+        logLine: true,
+        audioControls: true,
+        errorLog: true,
         initialAudioVolume: 0.1,
         music: true,
         musicShuffle: false,

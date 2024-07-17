@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Convar for letting external resources handle the loadscreen shutdown.
 - Shutdown when spawnmanager isn't available, and `externalShutdown` is false.
 - Error log to easily see & copy errors when they happen in the NUI.
+- Convars for toggling various parts of the loading screen on/off.
 
 ### Changed
 
@@ -37,6 +38,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Semantic versioning note in the changelog - this resource doesn't have an API.
 - Config option for specifying assets - they are now automatically detected.
 - Better shutdown for specific resources - use the new convar option.
+- Minimal style hiding the secondary bar - this is now handled through convars.
 
 ## [1.2.0] - 2024-05-23
 

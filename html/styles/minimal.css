@@ -32,7 +32,10 @@
 }
 
 #secondary-bar-wrapper {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.35rem;
 }
 
 #loading-action {
@@ -41,7 +44,8 @@
 }
 
 #secondary-bar {
-    display: none;
+    block-size: 0.75rem;
+    inline-size: 10rem;
 }
 
 #primary-bar {

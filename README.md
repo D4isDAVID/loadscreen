@@ -29,7 +29,7 @@ The loading screen comes with 3 styles by default:
 
 - Classic: the default style since v1.0.0;
 - Modern: a modernized layout;
-- Minimal: everything is centered and the secondary loading bar is removed.
+- Minimal: everything is condensed and centered.
 
 The config can switch between these 3. Alternatively, you may create your own
 CSS style and use it in the config instead.
