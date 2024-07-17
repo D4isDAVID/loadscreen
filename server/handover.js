@@ -76,6 +76,8 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
         config: {
             style: GetConvar('loadscreen:style', 'classic'),
             background: GetConvar('loadscreen:background', 'image'),
+            backgroundBrightness:
+                GetConvarInt('loadscreen:backgroundBrightness', 30) / 100,
             textColor: GetConvar('loadscreen:textColor', 'rgb(250, 250, 250)'),
             primaryColor: GetConvar(
                 'loadscreen:primaryColor',

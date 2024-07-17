@@ -1,3 +1,4 @@
+import { loadscreenWrapper } from './util/elements.js';
 import { getHandoverData } from './util/handover.js';
 
 const {
@@ -9,6 +10,7 @@ const {
         secondaryColor,
         shadowColor,
         fontFamily,
+        backgroundBrightness,
     },
 } = getHandoverData();
 
@@ -29,3 +31,5 @@ root.style.setProperty('--primary-color', primaryColor);
 root.style.setProperty('--secondary-color', secondaryColor);
 root.style.setProperty('--shadow-color', shadowColor);
 root.style.setProperty('--font-family', fontFamily);
+
+loadscreenWrapper.style.backdropFilter = `brightness(${backgroundBrightness})`;

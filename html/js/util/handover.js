@@ -10,6 +10,7 @@
  * @typedef {Object} NuiHandoverConfig
  * @property {string} style
  * @property {string} background
+ * @property {number} backgroundBrightness
  * @property {string} textColor
  * @property {string} primaryColor
  * @property {string} secondaryColor
@@ -55,6 +56,7 @@ const DEFAULT_HANDOVER_DATA = {
     config: {
         style: 'classic',
         background: 'image',
+        backgroundBrightness: 0.3,
         textColor: 'rgb(250, 250, 250)',
         primaryColor: 'rgb(64, 64, 255)',
         secondaryColor: 'rgb(64, 64, 64)',
