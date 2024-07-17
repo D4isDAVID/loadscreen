@@ -1,12 +1,18 @@
 import {
     loadingAction,
     logLine,
+    logo,
     primaryBar,
     secondaryBar,
 } from './util/elements.js';
 import { getHandoverData } from './util/handover.js';
 
-const { config } = getHandoverData();
+const { paths, config } = getHandoverData();
+
+if (config.logo && paths.logo) {
+    logo.src = paths.logo;
+    logo.style.display = '';
+}
 
 if (!config.primaryBar) {
     primaryBar.style.display = 'none';

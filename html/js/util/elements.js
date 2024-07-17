@@ -28,6 +28,9 @@ export const audioMuteIcon = /** @type {HTMLImageElement} */ (
 export const loadscreenWrapper = /** @type {HTMLDivElement} */ (
     document.getElementById('loadscreen-wrapper')
 );
+export const logo = /** @type {HTMLImageElement} */ (
+    document.getElementById('logo')
+);
 export const serverMessage = /** @type {HTMLParagraphElement} */ (
     document.getElementById('server-message')
 );

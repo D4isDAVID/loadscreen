@@ -9,7 +9,7 @@ const ASSETS = join(
 
 /**
  * @param {string} dir
- * @param {import("node:fs").ObjectEncodingOptions & { recursive?: boolean | undefined }} options
+ * @param {import("node:fs").ObjectEncodingOptions} options
  * @returns {string[]}
  */
 function readAssetsSync(dir, options) {
@@ -26,10 +26,34 @@ function readAssetsSync(dir, options) {
     }
 }
 
+/**
+ * @param {string} name
+ * @param {import("node:fs").ObjectEncodingOptions} options
+ * @returns {string | undefined}
+ */
+function getFirstAssetWithNameSync(name, options) {
+    try {
+        return readdirSync(join(ASSETS), {
+            ...options,
+            withFileTypes: true,
+        })
+            .filter(
+                (f) =>
+                    f.isFile() &&
+                    new RegExp(`^${name}\.[0-9A-Za-z]+$`).test(f.name),
+            )
+            .map((f) => `./assets/${f.name}`)[0];
+    } catch (e) {
+        console.warn(/** @type {NodeJS.ErrnoException} */ (e).message);
+        return;
+    }
+}
+
 const paths = {
     images: readAssetsSync('images', { encoding: 'utf8' }),
     music: readAssetsSync('music', { encoding: 'utf8' }),
     videos: readAssetsSync('videos', { encoding: 'utf8' }),
+    logo: getFirstAssetWithNameSync('logo', { encoding: 'utf8' }),
 };
 
 /**
@@ -52,6 +76,7 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
         config: {
             style: GetConvar('loadscreen:style', 'classic'),
 
+            logo: GetConvarInt('loadscreen:logo', 1) == 1,
             serverMessage: GetConvar(
                 'loadscreen:serverMessage',
                 '${playerName}, welcome to ${serverName}!',

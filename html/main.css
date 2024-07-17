@@ -146,6 +146,12 @@ input[type='range']::-webkit-slider-thumb {
     object-fit: cover;
 }
 
+#logo {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+}
+
 #audio-controls {
     position: fixed;
     right: 1.75rem;

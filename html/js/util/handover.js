@@ -3,11 +3,13 @@
  * @property {string[]} images
  * @property {string[]} music
  * @property {string[]} videos
+ * @property {string} [logo]
  */
 
 /**
  * @typedef {Object} NuiHandoverConfig
  * @property {string} style
+ * @property {boolean} logo
  * @property {string} serverMessage
  * @property {boolean} primaryBar
  * @property {boolean} secondaryBar
@@ -43,9 +45,11 @@ const DEFAULT_HANDOVER_DATA = {
         images: ['./assets/images/moon.png', './assets/images/vinewood.png'],
         music: ['./assets/music/fire.mp3'],
         videos: [],
+        logo: './assets/logo.png',
     },
     config: {
-        style: 'modern',
+        style: 'classic',
+        logo: true,
         serverMessage: '${playerName}, welcome to ${serverName}!',
         primaryBar: true,
         secondaryBar: true,

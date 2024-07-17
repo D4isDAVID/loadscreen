@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Shutdown when spawnmanager isn't available, and `externalShutdown` is false.
 - Error log to easily see & copy errors when they happen in the NUI.
 - Convars for toggling various parts of the loading screen on/off.
+- Option for displaying a logo.
 
 ### Changed
 
