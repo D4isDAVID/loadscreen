@@ -21,6 +21,7 @@ html {
     background-size: cover;
 
     font-family: 'Roboto';
+    user-select: none;
     color: var(--text-color);
 
     transition: background-image 2s;

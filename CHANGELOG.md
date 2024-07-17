@@ -30,6 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Rounded the loading bars' borders.
 - Replaced the default audio controls with a cleaner version that also controls the background video's volume.
 - Reduced padding from some sides of the screen in classic and modern styles for consistency.
+- Disabled users being able to select text & drag images.
 - Refactored the internal code.
   - Reformatted and typechecked the JS code.
   - Added GitHub workflows for testing the code and for publishing a GitHub release.

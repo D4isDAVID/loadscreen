@@ -15,7 +15,7 @@
     <body>
         <div id="error-wrapper" style="display: none">
             <header>
-                <img src="./assets/icons/report.svg" />
+                <img src="./assets/icons/report.svg" draggable="false" />
                 <h3>Error log</h3>
             </header>
             <p>Please copy & report the errors below.</p>
@@ -39,7 +39,7 @@
 
         <div id="loadscreen-wrapper">
             <header>
-                <img id="logo" style="display: none" />
+                <img id="logo" draggable="false" style="display: none" />
                 <h1 id="server-message"></h1>
             </header>
             <footer>
@@ -60,7 +60,11 @@
     <div id="audio-controls" class="hover" style="display: none">
         <input id="audio-volume" min="0" max="1" step="0.01" type="range" />
         <button id="audio-mute" class="hover">
-            <img id="audio-mute-icon" src="./assets/icons/volume_up.svg" />
+            <img
+                id="audio-mute-icon"
+                src="./assets/icons/volume_up.svg"
+                draggable="false"
+            />
         </button>
     </div>
 </html>
