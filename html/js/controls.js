@@ -35,7 +35,6 @@ if (
      */
     const updateVolume = (volume) => {
         muted = volume === 0;
-        audioVolume.style.setProperty('--value', `${volume * 100}%`);
         backgroundVideo.volume = volume;
         backgroundAudio.volume = volume;
         audioMuteIcon.src = muted
@@ -54,4 +53,5 @@ if (
     });
 
     updateVolume(initialAudioVolume);
+    audioVolume.dispatchEvent(new Event('input'));
 }

@@ -8,6 +8,21 @@ import {
 } from './util/elements.js';
 import { getHandoverData } from './util/handover.js';
 
+document.querySelectorAll('input').forEach((e) => {
+    if (e.type !== 'range') return;
+
+    const update = () => {
+        const min = parseFloat(e.min);
+        const max = parseFloat(e.max);
+        const num = parseFloat(e.value);
+
+        e.style.setProperty('--value', `${((num - min) / (max - min)) * 100}%`);
+    };
+
+    e.addEventListener('input', update);
+    update();
+});
+
 const { paths, config } = getHandoverData();
 
 const root = document.documentElement;
