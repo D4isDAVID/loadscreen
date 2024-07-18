@@ -135,6 +135,11 @@ input[type='range']::-webkit-slider-thumb {
     object-fit: cover;
 }
 
+#overlay {
+    width: 100vw;
+    height: 100vh;
+}
+
 #logo {
     width: 5rem;
     height: 5rem;

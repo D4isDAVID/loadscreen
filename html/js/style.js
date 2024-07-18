@@ -1,8 +1,8 @@
 import {
     loadingAction,
-    loadscreenWrapper,
     logLine,
     logo,
+    overlay,
     primaryBar,
     secondaryBar,
 } from './util/elements.js';
@@ -43,7 +43,7 @@ root.style.setProperty('--secondary-color', config.secondaryColor);
 root.style.setProperty('--shadow-color', config.shadowColor);
 root.style.setProperty('--font-family', config.fontFamily);
 
-loadscreenWrapper.style.backdropFilter = `brightness(${config.backgroundBrightness})`;
+overlay.style.backdropFilter = `brightness(${config.backgroundBrightness})`;
 
 if (config.logo && paths.logo) {
     logo.src = paths.logo;

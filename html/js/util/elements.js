@@ -12,6 +12,10 @@ export const backgroundAudio = /** @type {HTMLAudioElement} */ (
     document.getElementById('background-audio')
 );
 
+export const overlay = /** @type {HTMLDivElement} */ (
+    document.getElementById('overlay')
+);
+
 export const audioControls = /** @type {HTMLDivElement} */ (
     document.getElementById('audio-controls')
 );
