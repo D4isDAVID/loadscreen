@@ -27,7 +27,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Simplified music & video code.
 - Reduced the loading bars' widths in the classic style.
-- Moved the audio controls to the bottom left in the minimal style.
 - Moved the config from a JS file to FiveM convars.
 - Rounded the loading bars' borders.
 - Replaced the default audio controls with a cleaner version that also controls the background video's volume.
