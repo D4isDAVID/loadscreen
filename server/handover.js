@@ -67,7 +67,8 @@ const paths = {
  * @param {Deferrals} deferrals
  */
 function onPlayerConnecting(name, _setKickReason, deferrals) {
-    deferrals.handover({
+    /** @type {import('../types/handover.d.ts').NuiHandoverData} */
+    const data = {
         playerName: name,
         serverName: GetConvar('sv_projectName', GetConvar('sv_hostname', '')),
 
@@ -122,7 +123,9 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
             imageShuffle: GetConvarInt('loadscreen:imageShuffle', 0) == 1,
             videoShuffle: GetConvarInt('loadscreen:videoShuffle', 0) == 1,
         },
-    });
+    };
+
+    deferrals.handover(/** @type {any} */ (data));
 }
 
 on('playerConnecting', onPlayerConnecting);

@@ -1,44 +1,5 @@
 /**
- * @typedef {Object} NuiHandoverPaths
- * @property {string[]} images
- * @property {string[]} music
- * @property {string[]} videos
- * @property {string} [logo]
- */
-
-/**
- * @typedef {Object} NuiHandoverConfig
- * @property {string} style
- * @property {string} background
- * @property {number} backgroundBrightness
- * @property {string} textColor
- * @property {string} primaryColor
- * @property {string} secondaryColor
- * @property {string} shadowColor
- * @property {string} fontFamily
- * @property {boolean} logo
- * @property {string} serverMessage
- * @property {boolean} primaryBar
- * @property {boolean} secondaryBar
- * @property {boolean} loadingAction
- * @property {string} finishingMessage
- * @property {boolean} logLine
- * @property {boolean} audioControls
- * @property {boolean} errorLog
- * @property {number} initialAudioVolume
- * @property {boolean} music
- * @property {boolean} musicShuffle
- * @property {number} imageRate
- * @property {boolean} imageShuffle
- * @property {boolean} videoShuffle
- */
-
-/**
- * @typedef {Object} NuiHandoverData
- * @property {string} playerName
- * @property {string} serverName
- * @property {NuiHandoverPaths} paths
- * @property {NuiHandoverConfig} config
+ * @typedef {import('../../../types/handover.d.ts').NuiHandoverData} NuiHandoverData
  */
 
 /**
