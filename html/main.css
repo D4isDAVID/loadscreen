@@ -143,7 +143,7 @@ input[type='range']::-webkit-slider-thumb {
 #logo {
     width: 5rem;
     height: 5rem;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 #audio-controls {
