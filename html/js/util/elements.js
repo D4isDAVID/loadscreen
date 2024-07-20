@@ -1,3 +1,7 @@
+export const style = /** @type {HTMLLinkElement} */ (
+    document.getElementById('style')
+);
+
 export const errorWrapper = /** @type {HTMLDivElement} */ (
     document.getElementById('error-wrapper')
 );

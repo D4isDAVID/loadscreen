@@ -43,3 +43,84 @@ const DEFAULT_HANDOVER_DATA = {
 export function getHandoverData() {
     return /** @type {any} */ (window).nuiHandoverData ?? DEFAULT_HANDOVER_DATA;
 }
+
+/**
+ * @readonly
+ * @enum {number}
+ */
+const BackgroundType = {
+    CSS: 0,
+    Image: 1,
+    Video: 2,
+};
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {BackgroundType}
+ */
+function getBackgroundType({ config: { background } }) {
+    return (
+        {
+            image: BackgroundType.Image,
+            video: BackgroundType.Video,
+        }[background] ?? BackgroundType.CSS
+    );
+}
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldShowBackgroundCSS(handoverData) {
+    return getBackgroundType(handoverData) === BackgroundType.CSS;
+}
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldShowBackgroundImages(handoverData) {
+    return (
+        getBackgroundType(handoverData) === BackgroundType.Image &&
+        handoverData.paths.images.length > 0
+    );
+}
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldShowBackgroundVideos(handoverData) {
+    return (
+        getBackgroundType(handoverData) === BackgroundType.Video &&
+        handoverData.paths.videos.length > 0
+    );
+}
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldShowLogo({ paths, config }) {
+    return config.logo && typeof paths.logo !== 'undefined';
+}
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldPlayBackgroundMusic({ paths, config }) {
+    return config.music && paths.music.length > 0;
+}
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldShowAudioControls(handoverData) {
+    return (
+        handoverData.config.audioControls &&
+        (shouldShowBackgroundVideos(handoverData) ||
+            shouldPlayBackgroundMusic(handoverData))
+    );
+}
