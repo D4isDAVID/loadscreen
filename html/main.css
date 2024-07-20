@@ -193,7 +193,6 @@ input[type='range']::-webkit-slider-thumb {
     width: 4rem;
 }
 
-/* todo: check */
 #loadscreen-wrapper,
 #finishing-wrapper {
     transition: var(--finishing-transition);
