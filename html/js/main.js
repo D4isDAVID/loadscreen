@@ -7,7 +7,12 @@ import {
     secondaryBar,
     secondaryBarWrapper,
 } from './util/elements.js';
-import { isBrowserEnv } from './util/env.js';
+import {
+    getHandoverData,
+    shouldShowSecondaryWrapper,
+} from './util/handover.js';
+
+const handoverData = getHandoverData();
 
 /**
  * @typedef {Object} LoadingAction
@@ -44,6 +49,7 @@ const currentLoadingAction = {
 function showSecondaryBar(max) {
     secondaryBar.value = 0;
     secondaryBar.max = max;
+    if (!shouldShowSecondaryWrapper(handoverData)) return;
     secondaryBarWrapper.style.display = '';
 }
 
