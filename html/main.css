@@ -13,7 +13,7 @@ html {
     width: 100vw;
     height: 100vh;
 
-    background-image: var(--background);
+    background-color: var(--background);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,6 +27,13 @@ html {
 
 h1 {
     font-weight: 300;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 400;
 }
 
 progress {
@@ -49,6 +56,7 @@ input[type='range'] {
     cursor: pointer;
     border-radius: 1rem;
     background-color: transparent;
+    height: 1rem;
 }
 
 input[type='range']::-webkit-slider-runnable-track {

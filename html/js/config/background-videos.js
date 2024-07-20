@@ -17,6 +17,7 @@ export function configBackgroundVideos(handoverData) {
 
     if (!shouldShowBackgroundVideos(handoverData)) {
         backgroundVideo.style.display = 'none';
+        backgroundVideo.src = '';
         return;
     }
 

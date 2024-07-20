@@ -18,6 +18,7 @@ export function configBackgroundImages(handoverData) {
     }
 
     if (!shouldShowBackgroundImages(handoverData)) {
+        document.documentElement.style.background = '';
         return;
     }
 

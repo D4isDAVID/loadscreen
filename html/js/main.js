@@ -64,7 +64,7 @@ function hideSecondaryBar() {
 
 const handlers = {
     /**
-     * @param {{ eventName: 'loadProgress', loadFraction: number }} data
+     * @param {LoadscreenEvents.LoadProgress} data
      */
     loadProgress({ loadFraction }) {
         primaryBar.value = loadFraction;
@@ -73,18 +73,22 @@ const handlers = {
             finishingWrapper.style.display = '';
             finishingWrapper.style.opacity = '1';
             loadscreenWrapper.style.opacity = '0';
+        } else {
+            finishingWrapper.style.display = 'none';
+            finishingWrapper.style.opacity = '0';
+            loadscreenWrapper.style.opacity = '1';
         }
     },
 
     /**
-     * @param {{ eventName: 'onLogLine', message: string }} data
+     * @param {LoadscreenEvents.OnLogLine} data
      */
     onLogLine({ message }) {
         logLine.innerText = message;
     },
 
     /**
-     * @param {{ eventName: 'startDataFileEntries', count: number }} data
+     * @param {LoadscreenEvents.StartDataFileEntries} data
      */
     startDataFileEntries({ count }) {
         currentLoadingAction.startedDataFiles = true;
@@ -92,7 +96,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'onDataFileEntry', name: string, type: number, isNew: boolean }} data
+     * @param {LoadscreenEvents.OnDataFileEntry} data
      */
     onDataFileEntry({ name }) {
         currentLoadingAction.map = null;
@@ -102,7 +106,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'performMapLoadFunction', idx: number }} data
+     * @param {LoadscreenEvents.PerformMapLoadFunction} data
      */
     performMapLoadFunction({ idx }) {
         currentLoadingAction.map = `Map ${idx}`;
@@ -110,7 +114,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'endDataFileEntries' }} data
+     * @param {LoadscreenEvents.EndDataFileEntries} data
      */
     endDataFileEntries({}) {
         hideSecondaryBar();
@@ -120,7 +124,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'startInitFunction', type: string }} data
+     * @param {LoadscreenEvents.StartInitFunction} data
      */
     startInitFunction({ type }) {
         currentLoadingAction.initFunctionType = type;
@@ -129,7 +133,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'startInitFunctionOrder', type: string, order: number, count: number }} data
+     * @param {LoadscreenEvents.StartInitFunctionOrder} data
      */
     startInitFunctionOrder({ type, order, count }) {
         currentLoadingAction.initFunctionType = `${type} (${order})`;
@@ -138,7 +142,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'initFunctionInvoking', type: string, name: string, idx: number }} data
+     * @param {LoadscreenEvents.InitFunctionInvoking} data
      */
     initFunctionInvoking({ name, idx }) {
         currentLoadingAction.initFunction = name;
@@ -147,7 +151,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'initFunctionInvoked', type: string, name: string }} data
+     * @param {LoadscreenEvents.InitFunctionInvoked} data
      */
     initFunctionInvoked({}) {
         currentLoadingAction.map = null;
@@ -157,7 +161,7 @@ const handlers = {
     },
 
     /**
-     * @param {{ eventName: 'endInitFunction', type: string }} _data
+     * @param {LoadscreenEvents.EndInitFunction} _data
      */
     endInitFunction(_data) {
         hideSecondaryBar();
@@ -169,26 +173,3 @@ const handlers = {
 window.addEventListener('message', ({ data }) =>
     handlers[/** @type {keyof handlers} */ (data.eventName)]?.(data),
 );
-
-if (isBrowserEnv()) {
-    postMessage({ eventName: 'loadProgress', loadFraction: 0.65 });
-    postMessage({ eventName: 'startDataFileEntries', count: 100 });
-    postMessage({
-        eventName: 'startInitFunctionOrder',
-        type: 'TEST_FUNCTION',
-        order: 1,
-        count: 1,
-    });
-    postMessage({
-        eventName: 'initFunctionInvoking',
-        name: 'helloWorld',
-        idx: 0.65,
-    });
-    postMessage({
-        eventName: 'performMapLoadFunction',
-        idx: 65,
-    });
-    finishingWrapper.style.display = '';
-    finishingWrapper.style.opacity = '1';
-    postMessage({ eventName: 'onLogLine', message: 'Awaiting scripts' });
-}

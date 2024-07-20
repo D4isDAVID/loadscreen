@@ -3,6 +3,7 @@
     <head>
         <script src="./js/index.js" type="module"></script>
         <link id="style" rel="stylesheet" />
+        <link href="./dev.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -69,4 +70,358 @@
             />
         </button>
     </div>
+
+    <button id="dev-open" class="hover" style="display: none">Dev Menu</button>
+    <div id="dev-menu" class="hover" style="display: none">
+        <header class="row">
+            <h2>Dev Menu</h2>
+            <button id="dev-close" class="hover">Close</button>
+        </header>
+
+        <h3>Variables</h3>
+        <div class="col">
+            <h4>Player Name</h4>
+            <input id="dev-player-name" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Server Name</h4>
+            <input id="dev-server-name" class="hover grow" type="text" />
+        </div>
+
+        <h3>Config</h3>
+        <div class="col">
+            <h4>Style</h4>
+            <div class="row">
+                <input
+                    id="dev-style"
+                    class="hover grow"
+                    type="text"
+                    list="styles"
+                />
+                <button id="dev-style-button" class="icon hover">
+                    <img src="./assets/icons/arrow_forward.svg" />
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Background</h4>
+            <input
+                id="dev-background"
+                class="hover grow"
+                type="text"
+                list="backgrounds"
+            />
+        </div>
+        <div class="col">
+            <h4>Background Brightness</h4>
+            <input
+                id="dev-background-brightness"
+                class="hover grow"
+                type="number"
+            />
+        </div>
+        <div class="col">
+            <h4>Text Color</h4>
+            <input id="dev-text-color" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Primary Color</h4>
+            <input id="dev-primary-color" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Secondary Color</h4>
+            <input id="dev-secondary-color" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Shadow Color</h4>
+            <input id="dev-shadow-color" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Font Family</h4>
+            <input id="dev-font-family" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Logo</h4>
+            <input id="dev-logo" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Server Message</h4>
+            <input id="dev-server-message" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Primary Bar</h4>
+            <input id="dev-primary-bar" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Secondary Bar</h4>
+            <input id="dev-secondary-bar" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Loading Action</h4>
+            <input id="dev-loading-action" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Finishing Message</h4>
+            <input id="dev-finishing-message" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Log Line</h4>
+            <input id="dev-log-line" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Audio Controls</h4>
+            <input id="dev-audio-controls" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Error Log</h4>
+            <input id="dev-error-log" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Initial Audio Volume</h4>
+            <input
+                id="dev-initial-audio-volume"
+                class="hover grow"
+                type="number"
+            />
+        </div>
+        <div class="col">
+            <h4>Music</h4>
+            <input id="dev-music" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Music Shuffle</h4>
+            <input id="dev-music-shuffle" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Image Rate</h4>
+            <input id="dev-image-rate" class="hover grow" type="number" />
+        </div>
+        <div class="col">
+            <h4>Image Shuffle</h4>
+            <input id="dev-image-shuffle" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Video Shuffle</h4>
+            <input id="dev-video-shuffle" class="shrink" type="checkbox" />
+        </div>
+
+        <h3>Events</h3>
+        <div class="event">
+            <h4>loadProgress</h4>
+            <div class="col">
+                <div class="row">
+                    <h5>fraction</h5>
+                    <p id="dev-load-progress-fraction-label">0</p>
+                </div>
+                <input
+                    id="dev-load-progress-fraction"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0"
+                    class="hover grow"
+                    type="range"
+                />
+            </div>
+            <button id="dev-load-progress" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>onLogLine</h4>
+            <div class="col">
+                <h5>message</h5>
+                <input
+                    id="dev-on-log-line-message"
+                    class="hover grow"
+                    type="text"
+                    value="Awaiting scripts"
+                />
+            </div>
+            <button id="dev-on-log-line" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>startDataFileEntries</h4>
+            <div class="col">
+                <h5>count</h5>
+                <input
+                    id="dev-start-data-file-entries-count"
+                    class="hover grow"
+                    type="number"
+                    value="10"
+                />
+            </div>
+            <button id="dev-start-data-file-entries" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>onDataFileEntry</h4>
+            <div class="col">
+                <h5>name</h5>
+                <input
+                    id="dev-on-data-file-entry-name"
+                    class="hover grow"
+                    type="text"
+                    value="file"
+                />
+            </div>
+            <div class="col">
+                <h5>type</h5>
+                <input
+                    id="dev-on-data-file-entry-type"
+                    class="hover grow"
+                    type="number"
+                    value="1"
+                />
+            </div>
+            <div class="col">
+                <h5>isNew</h5>
+                <input
+                    id="dev-on-data-file-entry-is-new"
+                    type="checkbox"
+                    checked
+                />
+            </div>
+            <button id="dev-on-data-file-entry" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>performMapLoadFunction</h4>
+            <div class="col">
+                <h5>idx</h5>
+                <input
+                    id="dev-perform-map-load-function-idx"
+                    class="hover grow"
+                    type="number"
+                    value="47"
+                />
+            </div>
+            <button id="dev-perform-map-load-function" class="hover">
+                Emit
+            </button>
+        </div>
+        <div class="event">
+            <h4>endDataFileEntries</h4>
+            <button id="dev-end-data-file-entries" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>startInitFunction</h4>
+            <div class="col">
+                <h5>type</h5>
+                <input
+                    id="dev-start-init-function-type"
+                    class="hover grow"
+                    type="text"
+                    value="MOCK_FUNCTION"
+                />
+            </div>
+            <button id="dev-start-init-function" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>startInitFunctionOrder</h4>
+            <div class="col">
+                <h5>type</h5>
+                <input
+                    id="dev-start-init-function-order-type"
+                    class="hover grow"
+                    type="text"
+                    value="MOCK_FUNCTION"
+                />
+            </div>
+            <div class="col">
+                <h5>order</h5>
+                <input
+                    id="dev-start-init-function-order-order"
+                    class="hover grow"
+                    type="number"
+                    value="1"
+                />
+            </div>
+            <div class="col">
+                <h5>count</h5>
+                <input
+                    id="dev-start-init-function-order-count"
+                    class="hover grow"
+                    type="number"
+                    value="10"
+                />
+            </div>
+            <button id="dev-start-init-function-order" class="hover">
+                Emit
+            </button>
+        </div>
+        <div class="event">
+            <h4>initFunctionInvoking</h4>
+            <div class="col">
+                <h5>type</h5>
+                <input
+                    id="dev-init-function-invoking-type"
+                    class="hover grow"
+                    type="text"
+                    value="MOCK_FUNCTION"
+                />
+            </div>
+            <div class="col">
+                <h5>name</h5>
+                <input
+                    id="dev-init-function-invoking-name"
+                    class="hover grow"
+                    type="text"
+                    value="helloWorld"
+                />
+            </div>
+            <div class="col">
+                <h5>idx</h5>
+                <input
+                    id="dev-init-function-invoking-idx"
+                    class="hover grow"
+                    type="number"
+                    value="6"
+                />
+            </div>
+            <button id="dev-init-function-invoking" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>initFunctionInvoked</h4>
+            <div class="col">
+                <h5>type</h5>
+                <input
+                    id="dev-init-function-invoked-type"
+                    class="hover grow"
+                    type="text"
+                    value="MOCK_FUNCTION"
+                />
+            </div>
+            <div class="col">
+                <h5>name</h5>
+                <input
+                    id="dev-init-function-invoked-name"
+                    class="hover grow"
+                    type="text"
+                    value="helloWorld"
+                />
+            </div>
+            <button id="dev-init-function-invoked" class="hover">Emit</button>
+        </div>
+        <div class="event">
+            <h4>endInitFunction</h4>
+            <div class="col">
+                <h5>type</h5>
+                <input
+                    id="dev-end-init-function-type"
+                    class="hover grow"
+                    type="text"
+                    value="MOCK_FUNCTION"
+                />
+            </div>
+            <button id="dev-end-init-function" class="hover">Emit</button>
+        </div>
+    </div>
+
+    <datalist id="styles">
+        <option value="classic"></option>
+        <option value="minimal"></option>
+        <option value="modern"></option>
+    </datalist>
+
+    <datalist id="backgrounds">
+        <option value="image"></option>
+        <option value="video"></option>
+    </datalist>
 </html>

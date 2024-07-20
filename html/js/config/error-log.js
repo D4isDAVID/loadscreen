@@ -15,9 +15,10 @@ export function setupErrorLog() {
  */
 export function configErrorLog({ config }) {
     window.removeEventListener('error', showErrorLog);
+    errorLog.textContent = '';
+    errorWrapper.style.display = 'none';
 
     if (!config.errorLog) {
-        errorWrapper.style.display = 'none';
         return;
     }
 

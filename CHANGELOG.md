@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Convars for changing the screen colors & CSS background.
 - Convar option for setting a custom font family.
 - Convar option for setting the background brightness.
+- Dev menu when the screen is opened in regular browsers.
 
 ### Changed
 
@@ -37,6 +38,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Added GitHub workflows for testing the code and for publishing a GitHub release.
   - Reorganized the HTML.
   - Refactored some of the JS code.
+  - Moved some type declarations into separate files.
 
 ### Removed
 

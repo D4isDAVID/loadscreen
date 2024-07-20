@@ -16,6 +16,7 @@ export function configBackgroundMusic(handoverData) {
     }
 
     if (!shouldPlayBackgroundMusic(handoverData)) {
+        backgroundAudio.src = '';
         return;
     }
 

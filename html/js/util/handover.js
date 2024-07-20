@@ -124,3 +124,11 @@ export function shouldShowAudioControls(handoverData) {
             shouldPlayBackgroundMusic(handoverData))
     );
 }
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldShowSecondaryWrapper({ config }) {
+    return config.secondaryBar && config.loadingAction;
+}
