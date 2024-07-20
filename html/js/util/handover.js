@@ -1,8 +1,4 @@
 /**
- * @typedef {import('../../../types/handover.d.ts').NuiHandoverData} NuiHandoverData
- */
-
-/**
  * @type {NuiHandoverData}
  */
 const DEFAULT_HANDOVER_DATA = {

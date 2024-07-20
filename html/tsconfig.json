@@ -9,5 +9,5 @@
 
     "lib": ["DOM", "ESNext"]
   },
-  "include": ["."]
+  "include": [".", "../types"]
 }

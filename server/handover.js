@@ -67,7 +67,7 @@ const paths = {
  * @param {Deferrals} deferrals
  */
 function onPlayerConnecting(name, _setKickReason, deferrals) {
-    /** @type {import('../types/handover.d.ts').NuiHandoverData} */
+    /** @type {NuiHandoverData} */
     const data = {
         playerName: name,
         serverName: GetConvar('sv_projectName', GetConvar('sv_hostname', '')),
