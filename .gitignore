@@ -1,6 +1,10 @@
 # Node.js packages
 node_modules/
 
+# FiveM yarn
+.yarn.installed
+yarn.lock
+
 # IDE-related
 .idea/
 .vscode/*
