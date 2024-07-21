@@ -1,6 +1,6 @@
 # loadscreen
 
-A simple loading screen for FiveM ([preview]).
+Clean and fully configurable loading screen for FiveM ([preview]).
 
 - [Key Features](#key-features)
 - [Configuration](#configuration)
