@@ -42,6 +42,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Reorganized the HTML.
   - Refactored some of the JS code.
   - Moved some type declarations into separate files.
+  - Organized handovers.
 
 ### Removed
 

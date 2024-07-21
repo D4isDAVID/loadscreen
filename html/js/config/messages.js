@@ -15,11 +15,8 @@ function replaceVariables(str, vars) {
 /**
  * @param {NuiHandoverData} handoverData
  */
-export function configMessages({ playerName, serverName, config }) {
-    serverMessage.innerText = replaceVariables(config.serverMessage, {
-        playerName,
-        serverName,
-    });
+export function configMessages({ vars, config }) {
+    serverMessage.innerText = replaceVariables(config.serverMessage, vars);
 
     finishingMessage.innerText = config.finishingMessage;
 }

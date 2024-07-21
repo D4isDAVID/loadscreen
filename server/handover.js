@@ -68,8 +68,13 @@ const paths = {
 function onPlayerConnecting(name, _setKickReason, deferrals) {
     /** @type {NuiHandoverData} */
     const data = {
-        playerName: name,
-        serverName: GetConvar('sv_projectName', GetConvar('sv_hostname', '')),
+        vars: {
+            playerName: name,
+            serverName: GetConvar(
+                'sv_projectName',
+                GetConvar('sv_hostname', ''),
+            ),
+        },
 
         paths,
 

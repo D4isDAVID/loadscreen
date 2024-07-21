@@ -2,8 +2,10 @@
  * @type {NuiHandoverData}
  */
 const DEFAULT_HANDOVER_DATA = {
-    playerName: 'Player',
-    serverName: 'Server',
+    vars: {
+        playerName: 'Player',
+        serverName: 'Server',
+    },
     paths: {
         images: ['./assets/images/moon.png', './assets/images/vinewood.png'],
         music: ['./assets/music/fire.mp3'],

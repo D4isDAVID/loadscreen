@@ -1,6 +1,8 @@
 declare interface NuiHandoverData {
-    playerName: string;
-    serverName: string;
+    vars: {
+        playerName: string;
+        serverName: string;
+    };
 
     paths: {
         images: string[];
