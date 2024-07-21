@@ -44,5 +44,5 @@ it for your server to a T.
 Configuration is handled through [convars].
 See [`loadscreen.cfg`](./loadscreen.cfg) for examples & explanations.
 
-[preview]: https://www.youtube.com/watch?v=PYmLLWKTgWo
+[preview]: https://d4isdavid.github.io/loadscreen/
 [convars]: https://docs.fivem.net/docs/scripting-reference/convars/
