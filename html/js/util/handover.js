@@ -14,7 +14,7 @@ const DEFAULT_HANDOVER_DATA = {
     },
     config: {
         style: 'minimal',
-        background: 'embed',
+        background: 'image',
         backgroundBrightness: 0.3,
         textColor: 'rgb(250, 250, 250)',
         primaryColor: 'rgb(64, 64, 255)',
