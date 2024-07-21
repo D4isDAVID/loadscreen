@@ -15,6 +15,9 @@ let prevVolume;
 
 export function setupAudioControls() {
     audioVolume.addEventListener('input', () => {
+        if (backgroundAudio.paused) backgroundAudio.play();
+        if (backgroundVideo.paused) backgroundVideo.play();
+
         const volume = parseFloat(audioVolume.value);
 
         backgroundVideo.volume = volume;
