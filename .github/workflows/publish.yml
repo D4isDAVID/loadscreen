@@ -28,10 +28,8 @@ jobs:
       - name: Archive
         shell: bash
         run: |
-          version="${{ github.ref_name }}"
-
           rm -rf "./loadscreen/.git"
-          7z a "loadscreen-$version.zip" "loadscreen"
+          7z a "loadscreen.zip" "loadscreen"
 
       - name: Draft release
         uses: softprops/action-gh-release@v2
