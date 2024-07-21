@@ -9,7 +9,7 @@ const DEFAULT_HANDOVER_DATA = {
     paths: {
         images: ['./assets/images/moon.png', './assets/images/vinewood.png'],
         music: ['./assets/music/fire.mp3'],
-        videos: ['./assets/videos/waterfall.mp4'],
+        videos: ['./assets/videos/waterfall.webm'],
         logo: './assets/logo.png',
     },
     config: {
