@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-version '2.0.0'
+version '2.1.0-dev'
 description 'Clean and fully configurable loading screen for FiveM'
 author 'David Malchin <malchin459@gmail.com>'
 repository 'https://github.com/D4isDAVID/loadscreen'
