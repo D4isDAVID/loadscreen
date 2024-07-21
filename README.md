@@ -2,6 +2,8 @@
 
 Clean and fully configurable loading screen for FiveM ([preview]).
 
+Need support? Check out the [Discord server](https://discord.gg/rdjpS2K8hC)!
+
 - [Key Features](#key-features)
 - [Configuration](#configuration)
 
