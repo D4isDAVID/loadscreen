@@ -40,6 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Refactored the internal code.
   - Reformatted and typechecked the JS code.
   - Added GitHub workflows for testing the code and for publishing a GitHub release.
+  - Added issue templates and a code of conduct for GitHub.
   - Reorganized the HTML.
   - Refactored some of the JS code.
   - Moved some type declarations into separate files.
