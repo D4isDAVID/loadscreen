@@ -23,6 +23,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Convar option for setting a custom font family.
 - Convar option for setting the background brightness.
 - Dev menu when the screen is opened in regular browsers.
+- Generated CFG output to the dev menu.
 
 ### Changed
 

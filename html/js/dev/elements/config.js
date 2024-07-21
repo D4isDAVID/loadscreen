@@ -1,3 +1,6 @@
+export const devGeneratedCfg = /** @type {HTMLTextAreaElement} */ (
+    document.getElementById('dev-generated-cfg')
+);
 export const devStyle = /** @type {HTMLInputElement} */ (
     document.getElementById('dev-style')
 );
