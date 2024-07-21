@@ -1,11 +1,10 @@
 const { readdirSync } = require('node:fs');
 const { join } = require('node:path');
 
-const ASSETS = join(
-    GetResourcePath(GetCurrentResourceName()),
-    'html',
-    'assets',
-);
+const loadscreen = GetCurrentResourceName();
+const NUI_ASSETS = `nui://${loadscreen}/html/assets`;
+
+const ASSETS = join(GetResourcePath(loadscreen), 'html', 'assets');
 
 /**
  * @param {string} dir
@@ -19,7 +18,7 @@ function readAssetsSync(dir, options) {
             withFileTypes: true,
         })
             .filter((f) => f.isFile())
-            .map((f) => `./assets/${dir}/${f.name}`);
+            .map((f) => `${NUI_ASSETS}/${dir}/${f.name}`);
     } catch (e) {
         console.warn(/** @type {NodeJS.ErrnoException} */ (e).message);
         return [];
@@ -42,7 +41,7 @@ function getFirstAssetWithNameSync(name, options) {
                     f.isFile() &&
                     new RegExp(`^${name}\.[0-9A-Za-z]+$`).test(f.name),
             )
-            .map((f) => `./assets/${f.name}`)[0];
+            .map((f) => `${NUI_ASSETS}/${f.name}`)[0];
     } catch (e) {
         console.warn(/** @type {NodeJS.ErrnoException} */ (e).message);
         return;
