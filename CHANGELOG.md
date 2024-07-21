@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+## [2.0.0] - 2024-07-21
+
+[2.0.0 diff]
+
 ### Added
 
 - Automatic usage of assets (images, music, videos).
@@ -116,7 +120,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Finishing message
 - Configuration file
 
-[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.2.0...main
+[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.0.0...main
+[2.0.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.0.0
+[2.0.0 diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v1.2.0
 [1.2.0 diff]: https://github.com/D4isDAVID/loadscreen/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v1.1.0
