@@ -23,6 +23,7 @@ jobs:
             README.md
             fxmanifest.lua
             loadscreen.cfg
+          sparse-checkout-cone-mode: false
 
       - name: Archive
         shell: bash
