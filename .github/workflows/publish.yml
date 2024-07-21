@@ -30,6 +30,7 @@ jobs:
         run: |
           version="${{ github.ref_name }}"
 
+          rm -rf "./loadscreen/.git"
           7z a "loadscreen-$version.zip" "loadscreen"
 
       - name: Draft release
