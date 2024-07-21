@@ -126,6 +126,11 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
             imageRate: GetConvarInt('loadscreen:imageRate', 7500),
             imageShuffle: GetConvarInt('loadscreen:imageShuffle', 0) == 1,
             videoShuffle: GetConvarInt('loadscreen:videoShuffle', 0) == 1,
+            embedLink: GetConvar(
+                'loadscreen:embedLink',
+                'https://www.youtube.com/embed?playlist=E49ureeMykI&autoplay=1&loop=1',
+            ),
+            embedAccess: GetConvarInt('loadscreen:embedAccess', 1) == 1,
         },
     };
 

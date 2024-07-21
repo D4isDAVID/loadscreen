@@ -35,5 +35,7 @@ declare interface NuiHandoverData {
         imageRate: number;
         imageShuffle: boolean;
         videoShuffle: boolean;
+        embedLink: string;
+        embedAccess: boolean;
     };
 }

@@ -56,6 +56,8 @@ export function configGenerator({ config }) {
         { name: 'imageRate', func: int },
         { name: 'imageShuffle', func: bool },
         { name: 'videoShuffle', func: bool },
+        { name: 'embedLink', func: str },
+        { name: 'embedAccess', func: bool },
     ];
 
     devGeneratedCfg.value = vars

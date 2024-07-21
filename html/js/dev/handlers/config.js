@@ -2,6 +2,8 @@ import {
     devAudioControls,
     devBackground,
     devBackgroundBrightness,
+    devEmbedAccess,
+    devEmbedLink,
     devErrorLog,
     devFinishingMessage,
     devFontFamily,
@@ -170,5 +172,17 @@ export function setupDevConfigHandlers(handoverData) {
         devVideoShuffle,
         config.videoShuffle,
         (c) => (config.videoShuffle = c),
+    );
+    createInputValueHandler(
+        handoverData,
+        devEmbedLink,
+        config.embedLink,
+        (c) => (config.embedLink = c),
+    );
+    createInputCheckedHandler(
+        handoverData,
+        devEmbedAccess,
+        config.embedAccess,
+        (c) => (config.embedAccess = c),
     );
 }

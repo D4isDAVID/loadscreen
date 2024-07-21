@@ -24,12 +24,16 @@
 
         <video
             id="background-video"
-            style="display: none"
             autoplay
             playsinline
             disablepictureinpicture
         ></video>
         <audio id="background-audio" autoplay></audio>
+        <iframe
+            id="background-embed"
+            frameborder="0"
+            style="pointer-events: none"
+        ></iframe>
 
         <div id="overlay"></div>
 
@@ -212,6 +216,14 @@
         <div class="col">
             <h4>Video Shuffle</h4>
             <input id="dev-video-shuffle" class="shrink" type="checkbox" />
+        </div>
+        <div class="col">
+            <h4>Embed Link</h4>
+            <input id="dev-embed-link" class="hover grow" type="text" />
+        </div>
+        <div class="col">
+            <h4>Embed Access</h4>
+            <input id="dev-embed-access" class="shrink" type="checkbox" />
         </div>
 
         <h3>Events</h3>
@@ -432,5 +444,6 @@
     <datalist id="backgrounds">
         <option value="image"></option>
         <option value="video"></option>
+        <option value="embed"></option>
     </datalist>
 </html>

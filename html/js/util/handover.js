@@ -14,7 +14,7 @@ const DEFAULT_HANDOVER_DATA = {
     },
     config: {
         style: 'minimal',
-        background: 'image',
+        background: 'embed',
         backgroundBrightness: 0.3,
         textColor: 'rgb(250, 250, 250)',
         primaryColor: 'rgb(64, 64, 255)',
@@ -36,6 +36,9 @@ const DEFAULT_HANDOVER_DATA = {
         imageRate: 7500,
         imageShuffle: false,
         videoShuffle: false,
+        embedLink:
+            'https://www.youtube.com/embed?playlist=E49ureeMykI&autoplay=1&loop=1',
+        embedAccess: true,
     },
 };
 
@@ -54,6 +57,7 @@ const BackgroundType = {
     CSS: 0,
     Image: 1,
     Video: 2,
+    Embed: 3,
 };
 
 /**
@@ -65,6 +69,7 @@ function getBackgroundType({ config: { background } }) {
         {
             image: BackgroundType.Image,
             video: BackgroundType.Video,
+            embed: BackgroundType.Embed,
         }[background] ?? BackgroundType.CSS
     );
 }
@@ -96,6 +101,17 @@ export function shouldShowBackgroundVideos(handoverData) {
     return (
         getBackgroundType(handoverData) === BackgroundType.Video &&
         handoverData.paths.videos.length > 0
+    );
+}
+
+/**
+ * @param {NuiHandoverData} handoverData
+ * @returns {boolean}
+ */
+export function shouldShowBackgroundEmbed(handoverData) {
+    return (
+        getBackgroundType(handoverData) === BackgroundType.Embed &&
+        handoverData.config.embedLink.trim().length > 0
     );
 }
 

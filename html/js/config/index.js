@@ -1,4 +1,5 @@
 import { configAudioControls, setupAudioControls } from './audio-controls.js';
+import { configBackgroundEmbed } from './background-embed.js';
 import { configBackgroundImages } from './background-images.js';
 import { configBackgroundMusic } from './background-music.js';
 import { configBackgroundVideos } from './background-videos.js';
@@ -22,6 +23,7 @@ export function config(handoverData) {
     configMessages(handoverData);
     configBackgroundImages(handoverData);
     configBackgroundVideos(handoverData);
+    configBackgroundEmbed(handoverData);
     configBackgroundMusic(handoverData);
     configAudioControls(handoverData);
     configGenerator(handoverData);

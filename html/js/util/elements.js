@@ -15,6 +15,9 @@ export const backgroundVideo = /** @type {HTMLVideoElement} */ (
 export const backgroundAudio = /** @type {HTMLAudioElement} */ (
     document.getElementById('background-audio')
 );
+export const backgroundEmbed = /** @type {HTMLIFrameElement} */ (
+    document.getElementById('background-embed')
+);
 
 export const overlay = /** @type {HTMLDivElement} */ (
     document.getElementById('overlay')

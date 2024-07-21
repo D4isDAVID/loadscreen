@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Generated CFG output to the dev menu.
 - GitHub pages deployment ([link](https://d4isdavid.github.io/loadscreen/)).
 - Default background video.
+- Background embed option.
 
 ### Changed
 

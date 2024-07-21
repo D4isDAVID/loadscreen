@@ -73,3 +73,9 @@ export const devImageShuffle = /** @type {HTMLInputElement} */ (
 export const devVideoShuffle = /** @type {HTMLInputElement} */ (
     document.getElementById('dev-video-shuffle')
 );
+export const devEmbedLink = /** @type {HTMLInputElement} */ (
+    document.getElementById('dev-embed-link')
+);
+export const devEmbedAccess = /** @type {HTMLInputElement} */ (
+    document.getElementById('dev-embed-access')
+);

@@ -133,7 +133,8 @@ input[type='range']::-webkit-slider-thumb {
     outline: none;
 }
 
-#background-video {
+#background-video,
+#background-embed {
     position: fixed;
     top: 0;
     left: 0;
@@ -204,4 +205,10 @@ input[type='range']::-webkit-slider-thumb {
 #loadscreen-wrapper,
 #finishing-wrapper {
     transition: var(--finishing-transition);
+}
+
+#loadscreen-wrapper,
+#finishing-wrapper,
+#overlay {
+    pointer-events: none;
 }
