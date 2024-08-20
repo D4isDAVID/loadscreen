@@ -29,6 +29,7 @@ const DEFAULT_HANDOVER_DATA = {
         finishingMessage: 'Finishing up...',
         logLine: true,
         audioControls: true,
+        rememberVolume: true,
         errorLog: true,
         initialAudioVolume: 0.1,
         music: true,

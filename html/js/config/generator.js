@@ -49,6 +49,7 @@ export function configGenerator({ config }) {
         { name: 'finishingMessage', func: str },
         { name: 'logLine', func: bool },
         { name: 'audioControls', func: bool },
+        { name: 'rememberVolume', func: bool },
         { name: 'errorLog', func: bool },
         { name: 'initialAudioVolume', func: int100 },
         { name: 'music', func: bool },

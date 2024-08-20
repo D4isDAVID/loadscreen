@@ -52,6 +52,9 @@ export const devLogLine = /** @type {HTMLInputElement} */ (
 export const devAudioControls = /** @type {HTMLInputElement} */ (
     document.getElementById('dev-audio-controls')
 );
+export const devRememberVolume = /** @type {HTMLInputElement} */ (
+    document.getElementById('dev-remember-volume')
+);
 export const devErrorLog = /** @type {HTMLInputElement} */ (
     document.getElementById('dev-error-log')
 );

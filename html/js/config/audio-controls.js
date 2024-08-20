@@ -8,6 +8,8 @@ import {
 } from '../util/elements.js';
 import { shouldShowAudioControls } from '../util/handover.js';
 
+const VOLUME_KEY = 'audio_volume';
+
 /** @type {boolean} */
 let muted;
 /** @type {string} */
@@ -22,6 +24,7 @@ export function setupAudioControls() {
 
         backgroundVideo.volume = volume;
         backgroundAudio.volume = volume;
+        localStorage.setItem(VOLUME_KEY, audioVolume.value);
 
         audioMuteIcon.src =
             volume === 0
@@ -51,8 +54,12 @@ export function configAudioControls(handoverData) {
     }
 
     const { config } = handoverData;
+    const oldVolume = config.rememberVolume
+        ? localStorage.getItem(VOLUME_KEY)
+        : null;
 
     audioControls.style.display = '';
-    audioVolume.value = `${config.initialAudioVolume}`;
+    localStorage.getItem(VOLUME_KEY);
+    audioVolume.value = oldVolume ?? `${config.initialAudioVolume}`;
     audioVolume.dispatchEvent(new Event('input'));
 }

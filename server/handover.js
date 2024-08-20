@@ -115,6 +115,7 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
             ),
             logLine: GetConvarInt('loadscreen:logLine', 1) == 1,
             audioControls: GetConvarInt('loadscreen:audioControls', 1) == 1,
+            rememberVolume: GetConvarInt('loadscreen:rememberVolume', 1) == 1,
             errorLog: GetConvarInt('loadscreen:errorLog', 1) == 1,
 
             initialAudioVolume:

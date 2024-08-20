@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+### Added
+
+- Convar to remember the audio volume set by the player using audio controls.
+
 ## [2.0.0] - 2024-07-21
 
 [2.0.0 diff]

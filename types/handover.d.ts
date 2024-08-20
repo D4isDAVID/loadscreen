@@ -28,6 +28,7 @@ declare interface NuiHandoverData {
         finishingMessage: string;
         logLine: boolean;
         audioControls: boolean;
+        rememberVolume: boolean;
         errorLog: boolean;
         initialAudioVolume: number;
         music: boolean;

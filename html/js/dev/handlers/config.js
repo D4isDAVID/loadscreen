@@ -17,6 +17,7 @@ import {
     devMusicShuffle,
     devPrimaryBar,
     devPrimaryColor,
+    devRememberVolume,
     devSecondaryBar,
     devSecondaryColor,
     devServerMessage,
@@ -130,6 +131,12 @@ export function setupDevConfigHandlers(handoverData) {
         devAudioControls,
         config.audioControls,
         (c) => (config.audioControls = c),
+    );
+    createInputCheckedHandler(
+        handoverData,
+        devRememberVolume,
+        config.rememberVolume,
+        (c) => (config.rememberVolume = c),
     );
     createInputCheckedHandler(
         handoverData,
