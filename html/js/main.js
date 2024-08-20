@@ -70,11 +70,9 @@ const handlers = {
         primaryBar.value = loadFraction;
         if (loadFraction === 1) {
             hideSecondaryBar();
-            finishingWrapper.style.display = '';
             finishingWrapper.style.opacity = '1';
             loadscreenWrapper.style.opacity = '0';
         } else {
-            finishingWrapper.style.display = 'none';
             finishingWrapper.style.opacity = '0';
             loadscreenWrapper.style.opacity = '1';
         }
