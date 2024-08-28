@@ -8,5 +8,6 @@
   "files.insertFinalNewline": true,
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
-  }
+  },
+  "javascript.preferences.importModuleSpecifierEnding": "js"
 }

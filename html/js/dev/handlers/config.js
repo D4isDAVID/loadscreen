@@ -5,6 +5,8 @@ import {
     devEmbedAccess,
     devEmbedLink,
     devErrorLog,
+    devFinishedLine,
+    devFinishedMessage,
     devFinishingMessage,
     devFontFamily,
     devImageRate,
@@ -125,6 +127,18 @@ export function setupDevConfigHandlers(handoverData) {
         devLogLine,
         config.logLine,
         (c) => (config.logLine = c),
+    );
+    createInputValueHandler(
+        handoverData,
+        devFinishedMessage,
+        config.finishedMessage,
+        (v) => (config.finishedMessage = v),
+    );
+    createInputValueHandler(
+        handoverData,
+        devFinishedLine,
+        config.finishedLine,
+        (v) => (config.finishedLine = v),
     );
     createInputCheckedHandler(
         handoverData,

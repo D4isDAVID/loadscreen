@@ -114,6 +114,11 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
                 'Finishing up...',
             ),
             logLine: GetConvarInt('loadscreen:logLine', 1) == 1,
+            finishedMessage: GetConvar('loadscreen:finishedMessage', 'Done!'),
+            finishedLine: GetConvar(
+                'loadscreen:finishedLine',
+                'You will be loaded in any moment now...',
+            ),
             audioControls: GetConvarInt('loadscreen:audioControls', 1) == 1,
             rememberVolume: GetConvarInt('loadscreen:rememberVolume', 1) == 1,
             errorLog: GetConvarInt('loadscreen:errorLog', 1) == 1,

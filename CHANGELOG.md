@@ -11,6 +11,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Convar to remember the audio volume set by the player using audio controls.
+- Screen for when loading is done, but another resource has to shut the loading screen down.
+
+### Changed
+
+- When `externalShutdown` is off, the loading screen shuts down instantly after resources are done loading, instead of relying on spawnmanager.
 
 ### Fixed
 

@@ -96,3 +96,7 @@ export const devEndInitFunctionType = /** @type {HTMLInputElement} */ (
 export const devEndInitFunction = /** @type {HTMLButtonElement} */ (
     document.getElementById('dev-end-init-function')
 );
+
+export const devFinishedLoading = /** @type {HTMLButtonElement} */ (
+    document.getElementById('dev-finished-loading')
+);

@@ -169,5 +169,5 @@ const handlers = {
 };
 
 window.addEventListener('message', ({ data }) =>
-    handlers[/** @type {keyof handlers} */ (data.eventName)]?.(data),
+    handlers[/** @type {keyof typeof handlers} */ (data.eventName)]?.(data),
 );

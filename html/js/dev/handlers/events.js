@@ -2,6 +2,7 @@ import {
     devEndDataFileEntries,
     devEndInitFunction,
     devEndInitFunctionType,
+    devFinishedLoading,
     devInitFunctionInvoked,
     devInitFunctionInvokedName,
     devInitFunctionInvokedType,
@@ -31,7 +32,7 @@ import {
 } from '../elements/events.js';
 
 /**
- * @template {LoadscreenEvent} T
+ * @template {LoadscreenEvent | CustomEvent} T
  * @param {HTMLButtonElement} button
  * @param {() => T} event
  */
@@ -157,6 +158,15 @@ export function setupDevEventHandlers() {
             ({
                 eventName: 'endInitFunction',
                 type: devEndInitFunctionType.value,
+            }),
+    );
+
+    setupDevEventHandler(
+        devFinishedLoading,
+        () =>
+            /** @type {CustomEvents.FinishedLoading} */
+            ({
+                customEvent: 'finishedLoading',
             }),
     );
 }

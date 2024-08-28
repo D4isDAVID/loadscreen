@@ -22,8 +22,8 @@ and video.
 
 ### No Bridge
 
-The loading screen shows up until the character spawns or until another
-resource shuts it down, depending on the configuration.
+The loading screen shows up until all resources are done loading or until
+another resource shuts it down, depending on the configuration.
 
 ### Multiple Styles
 

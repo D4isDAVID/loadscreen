@@ -49,6 +49,12 @@ export const devFinishingMessage = /** @type {HTMLInputElement} */ (
 export const devLogLine = /** @type {HTMLInputElement} */ (
     document.getElementById('dev-log-line')
 );
+export const devFinishedMessage = /** @type {HTMLInputElement} */ (
+    document.getElementById('dev-finished-message')
+);
+export const devFinishedLine = /** @type {HTMLInputElement} */ (
+    document.getElementById('dev-finished-line')
+);
 export const devAudioControls = /** @type {HTMLInputElement} */ (
     document.getElementById('dev-audio-controls')
 );

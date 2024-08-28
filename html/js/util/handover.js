@@ -28,6 +28,8 @@ const DEFAULT_HANDOVER_DATA = {
         loadingAction: false,
         finishingMessage: 'Finishing up...',
         logLine: true,
+        finishedMessage: 'Done!',
+        finishedLine: 'You will be loaded in any moment now...',
         audioControls: true,
         rememberVolume: true,
         errorLog: true,

@@ -3,6 +3,7 @@ import { configBackgroundEmbed } from './background-embed.js';
 import { configBackgroundImages } from './background-images.js';
 import { configBackgroundMusic } from './background-music.js';
 import { configBackgroundVideos } from './background-videos.js';
+import { configCustomEvents, setupCustomEvents } from './custom-events.js';
 import { configErrorLog, setupErrorLog } from './error-log.js';
 import { configGenerator } from './generator.js';
 import { configMessages } from './messages.js';
@@ -10,6 +11,7 @@ import { configStyle, setupStyle } from './style.js';
 
 export function setup() {
     setupErrorLog();
+    setupCustomEvents();
     setupStyle();
     setupAudioControls();
 }
@@ -19,6 +21,7 @@ export function setup() {
  */
 export function config(handoverData) {
     configErrorLog(handoverData);
+    configCustomEvents(handoverData);
     configStyle(handoverData);
     configMessages(handoverData);
     configBackgroundImages(handoverData);
