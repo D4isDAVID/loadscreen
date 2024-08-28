@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+## [2.1.1] - 2024-08-29
+
+[2.1.1 diff]
+
+### Fixed
+
+- Default GTA loading screen not shutting down with the NUI one.
+
 ## [2.1.0] - 2024-08-28
 
 [2.1.0 diff]
@@ -137,7 +145,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Finishing message
 - Configuration file
 
-[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.0...main
+[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.1...main
+[2.1.1]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.1
+[2.1.1 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.0
 [2.1.0 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.0.0
