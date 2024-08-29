@@ -8,6 +8,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+### Changed
+
+- Added a note to the example cfg file.
+- The error log now also handles the `unhandledrejection` event.
+
+### Fixed
+
+- Fix unhandled rejection when using audio controls but background music/video is off.
+
 ## [2.1.1] - 2024-08-29
 
 [2.1.1 diff]
