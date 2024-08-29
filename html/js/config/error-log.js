@@ -8,6 +8,9 @@ export function setupErrorLog() {
     window.addEventListener('error', (event) => {
         errorLog.textContent = `${errorLog.textContent}${event.type}: ${event.message}\n`;
     });
+    window.addEventListener('unhandledrejection', (event) => {
+        errorLog.textContent = `${errorLog.textContent}${event.type}: ${event.reason}\n`;
+    });
 }
 
 /**
@@ -15,6 +18,7 @@ export function setupErrorLog() {
  */
 export function configErrorLog({ config }) {
     window.removeEventListener('error', showErrorLog);
+    window.removeEventListener('unhandledrejection', showErrorLog);
     errorLog.textContent = '';
     errorWrapper.style.display = 'none';
 
@@ -23,4 +27,5 @@ export function configErrorLog({ config }) {
     }
 
     window.addEventListener('error', showErrorLog);
+    window.addEventListener('unhandledrejection', showErrorLog);
 }
