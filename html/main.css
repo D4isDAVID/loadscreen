@@ -186,7 +186,6 @@ input[type='range']::-webkit-slider-thumb {
 
     background-color: transparent;
     padding: 0.5rem;
-    transition: var(--hover-transition);
 
     border: none;
     border-radius: var(--border-round);
