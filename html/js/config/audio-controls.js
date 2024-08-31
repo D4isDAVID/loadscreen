@@ -61,7 +61,6 @@ export function configAudioControls(handoverData) {
         : null;
 
     audioControls.style.display = '';
-    localStorage.getItem(VOLUME_KEY);
     audioVolume.value = oldVolume ?? `${config.initialAudioVolume}`;
     audioVolume.dispatchEvent(new Event('input'));
 }
