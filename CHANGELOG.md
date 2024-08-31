@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Added a note to the example cfg file.
 - The error log now also handles the `unhandledrejection` event.
+- Removed some lines of code that don't do anything.
 
 ### Fixed
 
