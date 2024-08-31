@@ -157,15 +157,11 @@ input[type='range']::-webkit-slider-thumb {
 
 #audio-controls {
     position: fixed;
-    right: 1.75rem;
-    bottom: 4rem;
+    left: 50%;
+    bottom: 3.5rem;
+    transform: translateX(-50%);
     overflow: hidden;
     width: 2.5rem;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
 
     background-color: var(--shadow-color);
     border: 1px solid var(--secondary-color);
@@ -175,7 +171,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #audio-controls:hover {
-    width: 7.75rem;
+    width: 8rem;
 }
 
 #audio-mute {
@@ -197,8 +193,10 @@ input[type='range']::-webkit-slider-thumb {
 
 #audio-volume {
     position: absolute;
-    right: 3rem;
-    width: 4rem;
+    left: 2.75rem;
+    width: 4.5rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #loadscreen-wrapper,
