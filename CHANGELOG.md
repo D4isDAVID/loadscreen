@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+## [2.1.2] - 2024-09-10
+
+[2.1.2 diff]
+
 ### Changed
 
 - Added a note to the example cfg file.
@@ -159,7 +163,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Finishing message
 - Configuration file
 
-[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.1...main
+[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.2...main
+[2.1.2]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.2
+[2.1.2 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.1
 [2.1.1 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.0
