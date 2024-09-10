@@ -67,3 +67,46 @@ export const finishingMessage = /** @type {HTMLHeadingElement} */ (
 export const logLine = /** @type {HTMLParagraphElement} */ (
     document.getElementById('log-line')
 );
+
+export const devOpen = /** @type {HTMLButtonElement} */ (
+    document.getElementById('dev-open')
+);
+export const devMenu = /** @type {HTMLDivElement} */ (
+    document.getElementById('dev-menu')
+);
+export const devBack = /** @type {HTMLButtonElement} */ (
+    document.getElementById('dev-back')
+);
+export const devOptions = /** @type {HTMLDivElement} */ (
+    document.getElementById('dev-options')
+);
+export const devClose = /** @type {HTMLButtonElement} */ (
+    document.getElementById('dev-close')
+);
+export const devVariables = /** @type {HTMLDivElement} */ (
+    document.getElementById('dev-variables')
+);
+export const devConfig = /** @type {HTMLDivElement} */ (
+    document.getElementById('dev-config')
+);
+export const devEvents = /** @type {HTMLDivElement} */ (
+    document.getElementById('dev-events')
+);
+export const devCustomEvents = /** @type {HTMLDivElement} */ (
+    document.getElementById('dev-custom-events')
+);
+export const devCfgWrapper = /** @type {HTMLDivElement} */ (
+    document.getElementById('dev-cfg-wrapper')
+);
+export const devGeneratedCfg = /** @type {HTMLTextAreaElement} */ (
+    document.getElementById('dev-generated-cfg')
+);
+export const devValueTemplate = /** @type {HTMLTemplateElement} */ (
+    document.getElementById('dev-value-template')
+);
+export const devEventTemplate = /** @type {HTMLTemplateElement} */ (
+    document.getElementById('dev-event-template')
+);
+export const devEventParamTemplate = /** @type {HTMLTemplateElement} */ (
+    document.getElementById('dev-event-param-template')
+);

@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Removed some lines of code that don't do anything.
 - Moved the audio controls to the bottom center to avoid conflicts with the`Loading game` prompt in different resolutions.
 - Slightly increased the audio volume slider in width.
+- Refactored the dev menu to be generated on runtime.
 
 ### Fixed
 

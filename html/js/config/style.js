@@ -9,24 +9,29 @@ import {
 } from '../util/elements.js';
 import { shouldShowBackgroundCSS } from '../util/handover.js';
 
+/**
+ * @param {HTMLInputElement} element
+ */
+export function setupInputRangeStyle(element) {
+    if (element.type !== 'range') return;
+
+    function update() {
+        const min = parseFloat(element.min);
+        const max = parseFloat(element.max);
+        const num = parseFloat(element.value);
+
+        element.style.setProperty(
+            '--value',
+            `${((num - min) / (max - min)) * 100}%`,
+        );
+    }
+
+    element.addEventListener('input', update);
+    update();
+}
+
 export function setupStyle() {
-    document.querySelectorAll('input').forEach((e) => {
-        if (e.type !== 'range') return;
-
-        function update() {
-            const min = parseFloat(e.min);
-            const max = parseFloat(e.max);
-            const num = parseFloat(e.value);
-
-            e.style.setProperty(
-                '--value',
-                `${((num - min) / (max - min)) * 100}%`,
-            );
-        }
-
-        e.addEventListener('input', update);
-        update();
-    });
+    document.querySelectorAll('input').forEach(setupInputRangeStyle);
 }
 
 /**
