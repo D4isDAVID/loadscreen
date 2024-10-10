@@ -67,3 +67,7 @@
 
     text-align: center;
 }
+
+#audio-controls {
+    bottom: 4.5rem;
+}

@@ -158,7 +158,7 @@ input[type='range']::-webkit-slider-thumb {
 #audio-controls {
     position: fixed;
     left: 50%;
-    bottom: 3.5rem;
+    bottom: 1.75rem;
     transform: translateX(-50%);
     overflow: hidden;
     width: 2.5rem;
