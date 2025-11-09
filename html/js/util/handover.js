@@ -31,6 +31,7 @@ const DEFAULT_HANDOVER_DATA = {
         finishedMessage: 'Done!',
         finishedLine: 'You will be loaded in any moment now...',
         audioControls: true,
+        audioMuteKey: 'Space',
         rememberVolume: true,
         errorLog: true,
         initialAudioVolume: 0.1,

@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+### Added
+
+- Muting with a configurable keyboard key (Space key by default).
+
 ### Fixed
 
 - Inconsistent padding for finishing up message in modern style.

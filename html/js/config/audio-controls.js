@@ -15,6 +15,15 @@ let muted;
 /** @type {string} */
 let prevVolume;
 
+function mute() {
+    if (!muted) prevVolume = audioVolume.value;
+    if (prevVolume === '0') return;
+
+    muted = !muted;
+    audioVolume.value = muted ? '0' : prevVolume;
+    audioVolume.dispatchEvent(new Event('input'));
+}
+
 export function setupAudioControls() {
     audioVolume.addEventListener('input', () => {
         if (backgroundAudio.paused && backgroundAudio.readyState)
@@ -36,13 +45,8 @@ export function setupAudioControls() {
         if (volume > 0) muted = false;
     });
 
-    audioMute.addEventListener('click', () => {
-        if (!muted) prevVolume = audioVolume.value;
-        if (prevVolume === '0') return;
-
-        muted = !muted;
-        audioVolume.value = muted ? '0' : prevVolume;
-        audioVolume.dispatchEvent(new Event('input'));
+    audioMute.addEventListener('mousedown', () => {
+        mute();
     });
 }
 
@@ -63,4 +67,10 @@ export function configAudioControls(handoverData) {
     audioControls.style.display = '';
     audioVolume.value = oldVolume ?? `${config.initialAudioVolume}`;
     audioVolume.dispatchEvent(new Event('input'));
+
+    document.body.addEventListener('keypress', (event) => {
+        if (event.code === config.audioMuteKey) {
+            mute();
+        }
+    });
 }

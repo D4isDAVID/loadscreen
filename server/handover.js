@@ -120,6 +120,7 @@ function onPlayerConnecting(name, _setKickReason, deferrals) {
                 'You will be loaded in any moment now...',
             ),
             audioControls: GetConvarInt('loadscreen:audioControls', 1) == 1,
+            audioMuteKey: GetConvar('loadscreen:audioMuteKey', 'Space'),
             rememberVolume: GetConvarInt('loadscreen:rememberVolume', 1) == 1,
             errorLog: GetConvarInt('loadscreen:errorLog', 1) == 1,
 

@@ -59,6 +59,10 @@ input[type='range'] {
     height: 1rem;
 }
 
+input[type='range']:focus {
+    outline: none;
+}
+
 input[type='range']::-webkit-slider-runnable-track {
     appearance: none;
 
@@ -189,6 +193,10 @@ input[type='range']::-webkit-slider-thumb {
 
 #audio-mute:hover {
     cursor: pointer;
+}
+
+#audio-mute:focus {
+    outline: none;
 }
 
 #audio-volume {
