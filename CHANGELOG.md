@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Muting with a configurable keyboard key (Space key by default).
+- Removing colors such as `^1` from the loading message.
 
 ### Fixed
 
