@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+## [2.2.0] - 2025-10-11
+
+[2.2.0 diff]
+
 ### Added
 
 - Muting with a configurable keyboard key (Space key by default).
@@ -174,6 +178,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Configuration file
 
 [unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.2...main
+[2.2.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.2.0
+[2.2.0 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.2...v2.2.0
 [2.1.2]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.2
 [2.1.2 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.1
