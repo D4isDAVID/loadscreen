@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+## [2.2.1] - 2025-01-11
+
+[2.2.1 diff]
+
+### Fixed
+
+- Single background image not appearing.
+
 ## [2.2.0] - 2025-10-11
 
 [2.2.0 diff]
@@ -177,7 +185,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Finishing message
 - Configuration file
 
-[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.2...main
+[unreleased diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.2.1...main
+[2.2.1]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.2.1
+[2.2.1 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.2.0
 [2.2.0 diff]: https://github.com/D4isDAVID/loadscreen/compare/v2.1.2...v2.2.0
 [2.1.2]: https://github.com/D4isDAVID/loadscreen/releases/tag/v2.1.2
