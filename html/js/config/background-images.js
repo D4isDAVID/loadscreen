@@ -28,9 +28,7 @@ export function configBackgroundImages(handoverData) {
     } = handoverData;
 
     if (images.length === 1) {
-        document.documentElement.style.background = /** @type {string} */ (
-            images[0]
-        );
+        document.documentElement.style.backgroundImage = `url(${images[0]})`;
         return;
     }
 
