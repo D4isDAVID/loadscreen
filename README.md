@@ -1,6 +1,6 @@
 # loadscreen
 
-Clean and fully configurable loading screen for FiveM ([preview]).
+Clean and fully configurable loading screen for FXServer ([preview]).
 
 Need support? Check out the [Discord server](https://discord.gg/rdjpS2K8hC)!
 

@@ -1,8 +1,8 @@
 fx_version 'cerulean'
-game 'gta5'
+game 'common'
 
 version '2.2.1'
-description 'Clean and fully configurable loading screen for FiveM'
+description 'Clean and fully configurable loading screen for FXServer.'
 author 'David Malchin <malchin459@gmail.com>'
 repository 'https://github.com/D4isDAVID/loadscreen'
 

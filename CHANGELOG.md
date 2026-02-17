@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [unreleased diff]
 
+### Changed
+
+- Updated fxmanifest game from `gta5` to `common` to support all games.
+
 ## [2.2.1] - 2026-01-11
 
 [2.2.1 diff]
